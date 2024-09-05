@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cofre : MonoBehaviour
 {
     public GameObject chocolatada;
-    public KeyCode teclaParaAbrir = KeyCode.E; 
+    public KeyCode teclaParaAbrir = KeyCode.E;
     private bool estaAbierto = false;
 
     void Start()
@@ -36,9 +36,9 @@ public class Cofre : MonoBehaviour
         estaAbierto = true;
         Debug.Log("El cofre se ha abierto.");
 
-        int resultado = Random.Range(50, 100 + 1);
+        int resultado = Random.Range(0, 2);
 
-        if (resultado == 1 && chocolatada != null)
+        if (resultado == 1)
         {
             chocolatada.SetActive(true);
             Debug.Log("El cofre contiene un objeto.");
@@ -49,7 +49,7 @@ public class Cofre : MonoBehaviour
             {
                 chocolatada.SetActive(false);
             }
-            Debug.Log("El cofre está vacío.");
+            Debug.Log("El cofre estï¿½ vacï¿½o.");
         }
     }
 }
