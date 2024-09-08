@@ -11,8 +11,8 @@ TagManager:
   - Enemies
   - Water
   - UI
-  - 
-  - 
+  - SolidObject
+  - Player
   - 
   - 
   - 
@@ -38,9 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 2671866677
     locked: 0
   - name: PlayArea
     uniqueID: 1153534963
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

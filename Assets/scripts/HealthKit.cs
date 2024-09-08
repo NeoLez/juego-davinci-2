@@ -7,7 +7,7 @@ public class HealthKit : MonoBehaviour
     [SerializeField]
     private int healAmount = 1;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Life playerLife = collision.gameObject.GetComponent<Life>();
 

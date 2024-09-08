@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     Rigidbody2D rb2D;
-    float bufferWindow = 0.5f;
+    float bufferWindow = 0.6f;
     float cooldown = 0f;
     float lastAttackTime;
     int attackNumber = 0;
@@ -95,7 +95,7 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapBoxAll(attackCenter, size, angle);
         Debug.Log(hits.Length);
         foreach (Collider2D hit in hits) {
-            if (hit.gameObject.TryGetComponent<Life>(out Life life))
+            if (hit.gameObject!=gameObject && hit.gameObject.TryGetComponent<Life>(out Life life))
             {
                 life.TakeDamage(damage);
             }

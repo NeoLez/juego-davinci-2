@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
+    float viewRange = 6;
+    Vector2 viewDirection = Vector2.left;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Life life = collision.gameObject.GetComponent<Life>();
+        if (collision.gameObject == Manager.player)
+        {
+            Life life = collision.gameObject.GetComponent<Life>();
+            life.TakeDamage();
+        }
+        
+    }
 
-        life.TakeDamage();
+    Vector2 targetPosition;
 
+    private void Update()
+    {
+        if (Vector3.Distance(Manager.player.transform.position, transform.position) <= viewRange)
+        {
 
+        }
     }
 }

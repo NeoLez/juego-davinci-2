@@ -7,6 +7,7 @@ public class Cofre : MonoBehaviour
     public GameObject chocolatada;
     public KeyCode teclaParaAbrir = KeyCode.E;
     private bool estaAbierto = false;
+    bool canBeOpened = false;
 
     void Start()
     {
@@ -16,12 +17,21 @@ public class Cofre : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(teclaParaAbrir))
-        {
+        if(Input.GetKeyDown(teclaParaAbrir) && canBeOpened)
             AbrirCofre();
-        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject == Manager.player)
+            canBeOpened = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject == Manager.player)
+            canBeOpened = false;
     }
 
     void AbrirCofre()
