@@ -7,13 +7,10 @@ public class Life : MonoBehaviour
     [SerializeField]
     private int currentLife = 5;
 
-    public void TakeDamage()
+    public void TakeDamage(int damage = 1)
     {
-        if (currentLife > 0)
-        {
-            currentLife--;
-        }
-        else 
+        currentLife -= damage;
+        if (currentLife <= 0)
         {
             Debug.Log("jaja moriste");
             Destroy(gameObject);
