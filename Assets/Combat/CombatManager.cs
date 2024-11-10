@@ -1,16 +1,80 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Combat;
 using UnityEngine;
+using UnityEngine.Assertions;
 
-public class CombatManager : MonoBehaviour
+public class CombatManager
 {
-    public List<IFighter> GoodGuysTeam;
-    public List<IFighter> BadGuysTeam;
-    public IFighter CurrentTurnFighter;
+	//public const int MAX_PERSONAJES=2;
+	public Fighter fighterPlayer;
+	public Fighter fighterEnemy;
+	
+	public CombatManager(Fighter fighterPlayer, Fighter fighterEnemy, bool goodStarts) {
+		this.fighterEnemy = fighterEnemy;
+		this.fighterPlayer = fighterPlayer;
+		
+		if (checkingPlayerFighter) {
+			fighter = fighterPlayer;
+			this.fighterPlayer.ChooseAction(this);
+		}
+		else {
+			fighter = fighterEnemy;
+			this.fighterEnemy.ChooseAction(this);
+		}
+		
+		LogInfo();
+	}
 
-    public bool Continue() {
-        //run action
-        
-    }
+	private bool checkingPlayerFighter = false;
+	
+	Fighter fighter;
+	public void Continuar() {
+		var (action, target) = fighter.GetCurrentAction();
+		
+		Assert.IsTrue(action.MeetsRequirements(this, target, fighter));
+		
+		action.Run(this, target, fighter);
+		
+		LogInfo();
+		
+		
+		if (HasPlayerWon()) {
+			Debug.Log("Player won yay");
+			//DO SOMETHING HERE
+			return;
+		}
+		if (HasPlayerLost()) {
+			Debug.Log("Player lost :c");
+			//DO SOMETHING HERE
+			return;
+		}
+		
+		
+		
+		if (checkingPlayerFighter) {
+			fighter = fighterEnemy;
+		}
+		else {
+			fighter = fighterPlayer;
+		}
+
+		fighter.ChooseAction(this);
+		
+		checkingPlayerFighter = !checkingPlayerFighter;
+	}
+
+	bool HasPlayerWon() {
+		return !fighterEnemy.IsAlive();
+	}
+	bool HasPlayerLost() {
+		return !fighterPlayer.IsAlive();
+	}
+
+	void LogInfo() {
+		Debug.Log($"<color=#ffe59e>{fighterEnemy.name}: {fighterEnemy.stats}</color>");
+		Debug.Log($"<color=#ffe59e>{fighterPlayer.name}: {fighterPlayer.stats}</color>");
+	}
 }
+        
