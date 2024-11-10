@@ -6,16 +6,18 @@ public class Fighter
 {
     public string name;
     public Stats stats;
-    private FighterController controller;
+    private FighterController controller=null;
 
-    public Fighter(Stats stats, FighterController controller, string name) {
+    public Fighter(Stats stats, string name) {
         this.name = name;
         this.stats = stats;
-        this.controller = controller;
     }
 
     public void SetController(FighterController controller) {
         this.controller = controller;
+    }
+    public FighterController GetController() {
+        return controller;
     }
     //void SetCurrentAction(PlayerAction playerAction, IFighter target);
     public (PlayerAction, Fighter) GetCurrentAction() {

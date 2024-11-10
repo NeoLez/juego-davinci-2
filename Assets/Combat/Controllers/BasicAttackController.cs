@@ -2,8 +2,13 @@
 {
 	public class BasicAttackController : FighterController
 	{
+		private Fighter controlledFighter;
 		private PlayerAction currentAction;
 		private Fighter currentTarget;
+		
+		public BasicAttackController(Fighter controlledFighter) {
+			this.controlledFighter = controlledFighter;
+		}
 		
 		public (PlayerAction, Fighter) GetCurrentAction() {
 			return (currentAction, currentTarget);

@@ -32,8 +32,8 @@ public class CombatManager
 	Fighter fighter;
 	public void Continuar() {
 		var (action, target) = fighter.GetCurrentAction();
-		
-		Assert.IsTrue(action.MeetsRequirements(this, target, fighter));
+		Debug.Log($"Evaluating {fighter.name}'s turn");
+		Assert.IsTrue(action.MeetsRequirements(this, target, fighter), "A controller didn't do their homework ;c");
 		
 		action.Run(this, target, fighter);
 		
@@ -59,10 +59,9 @@ public class CombatManager
 		else {
 			fighter = fighterPlayer;
 		}
-
-		fighter.ChooseAction(this);
-		
 		checkingPlayerFighter = !checkingPlayerFighter;
+		
+		fighter.ChooseAction(this);
 	}
 
 	bool HasPlayerWon() {
