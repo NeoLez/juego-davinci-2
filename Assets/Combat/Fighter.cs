@@ -1,16 +1,18 @@
 
 using Combat;
 using Combat.Controllers;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class Fighter
 {
-    public string name;
+    public CharacterDataSO characterData;
     public Stats stats;
     private FighterController controller=null;
 
-    public Fighter(Stats stats, string name) {
-        this.name = name;
-        this.stats = stats;
+    public Fighter(CharacterDataSO enemyData) {
+        this.characterData = enemyData;
+        this.stats = enemyData.BaseStats.Clone();
     }
 
     public void SetController(FighterController controller) {

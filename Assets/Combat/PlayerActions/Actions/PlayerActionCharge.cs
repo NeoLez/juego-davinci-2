@@ -9,7 +9,7 @@ namespace Combat
 		}
 
 		public override void Run(CombatManager combatManager, Fighter target, Fighter actor) {
-			Debug.Log($"<color=#9effbe>{actor.name} is charging a skill</color>");
+			Debug.Log($"<color=#9effbe>{actor.characterData.name} is charging a skill</color>");
 		}
 	}
 }

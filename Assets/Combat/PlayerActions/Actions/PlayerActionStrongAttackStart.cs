@@ -11,7 +11,7 @@ namespace Combat
 
 		public override void Run(CombatManager combatManager, Fighter target, Fighter actor) {
 			actor.SetController(new ChargingAttackController(actor, PlayerActions.STRONG_ATTACK, 2, actor.GetController()));
-			Debug.Log($"<color=#9effbe>{actor.name} starts charging a strong attack</color>");
+			Debug.Log($"<color=#9effbe>{actor.characterData.name} starts charging a strong attack</color>");
 		}
 	}
 }

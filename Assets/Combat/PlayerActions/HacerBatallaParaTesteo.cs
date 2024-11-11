@@ -6,18 +6,24 @@ using UnityEngine;
 
 public class HacerBatallaParaTesteo : MonoBehaviour
 {
+    public CombatManager CombatManager;
+    public VisualsManager VisualsManager;
+    public GameObject canvas;
     void Start() {
+        Fighter enemyFighter = new Fighter(Resources.Load<CharacterDataSO>("CharacterInfo/Basic"));
+        Fighter playerFighter = new Fighter(Resources.Load<CharacterDataSO>("CharacterInfo/Player"));
         
-        Fighter enemyFighter = new Fighter(new Stats(3, 2 ,1), "generic_enemy");
-        Fighter playerFighter = new Fighter(new Stats(30, 2, 2), "player");
         enemyFighter.SetController(new BasicAttackController(enemyFighter));
-        playerFighter.SetController(new PlayerController(playerFighter));
-        
-        CombatManager c = new CombatManager(playerFighter, enemyFighter, true);
+        PlayerController playerController = canvas.GetComponent<PlayerController>();
+        playerFighter.SetController(playerController);
+
+
+        CombatManager = new CombatManager(playerFighter, enemyFighter, true);
+        VisualsManager = new VisualsManager(playerFighter, enemyFighter);
     }
+    //INTERFAZ
     //MEJORAR FORMA DE INTERACTUAR CON LAS STATS
     //Forma de obtener lista de habilidades
-    //Habilidades que carguen //REEMPLAZANDO EL CONTROLADOR???---Deberia estar?
     //Efectos
     //SCENE CHANGE
 }

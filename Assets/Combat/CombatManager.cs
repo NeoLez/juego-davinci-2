@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Combat;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 public class CombatManager
 {
@@ -15,7 +10,7 @@ public class CombatManager
 		this.fighterEnemy = fighterEnemy;
 		this.fighterPlayer = fighterPlayer;
 		
-		if (checkingPlayerFighter) {
+		if (goodStarts) {
 			fighter = fighterPlayer;
 			this.fighterPlayer.ChooseAction(this);
 		}
@@ -28,12 +23,11 @@ public class CombatManager
 	}
 
 	private bool checkingPlayerFighter = false;
-	
 	Fighter fighter;
 	public void Continuar() {
 		var (action, target) = fighter.GetCurrentAction();
-		Debug.Log($"Evaluating {fighter.name}'s turn");
-		Assert.IsTrue(action.MeetsRequirements(this, target, fighter), "A controller didn't do their homework ;c");
+		Debug.Log($"Evaluating {fighter.characterData.name}'s turn");
+		//Assert.IsTrue(action.MeetsRequirements(this, target, fighter), "A controller didn't do their homework ;c");
 		
 		action.Run(this, target, fighter);
 		
@@ -50,7 +44,6 @@ public class CombatManager
 			//DO SOMETHING HERE
 			return;
 		}
-		
 		
 		
 		if (checkingPlayerFighter) {
@@ -72,8 +65,8 @@ public class CombatManager
 	}
 
 	void LogInfo() {
-		Debug.Log($"<color=#ffe59e>{fighterEnemy.name}: {fighterEnemy.stats}</color>");
-		Debug.Log($"<color=#ffe59e>{fighterPlayer.name}: {fighterPlayer.stats}</color>");
+		Debug.Log($"<color=#ffe59e>{fighterEnemy.characterData.name}: {fighterEnemy.stats}</color>");
+		Debug.Log($"<color=#ffe59e>{fighterPlayer.characterData.name}: {fighterPlayer.stats}</color>");
 	}
 }
         

@@ -15,8 +15,15 @@ namespace Combat
 			this.AttackDamage = attackDamage;
 		}
 
-		public override string ToString() {
+        public Stats Clone()
+        {
+            return new Stats(Health, Defense, AttackDamage);
+        }
+
+        public override string ToString() {
 			return "{"+$"Health: {Health} Defense: {Defense} AttackDamage: {AttackDamage}"+"}";
 		}
+
+		
 	}
 }
