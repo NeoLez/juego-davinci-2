@@ -1,4 +1,6 @@
-﻿namespace Combat.Controllers
+﻿using UnityEngine;
+
+namespace Combat.Controllers
 {
 	public class BasicAttackController : FighterController
 	{
@@ -17,6 +19,7 @@
 		public void ChooseAction(CombatManager combatManager) {
 			currentAction = new PlayerActionAttack();
 			currentTarget = combatManager.fighterPlayer;
+
 			
 			combatManager.Continuar();
 		}

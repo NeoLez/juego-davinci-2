@@ -25,12 +25,12 @@ public class Cofre : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == Manager.player)
+        if(collision.gameObject == Manager.Instance.player)
             canBeOpened = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == Manager.player)
+        if (collision.gameObject == Manager.Instance.player)
             canBeOpened = false;
     }
 

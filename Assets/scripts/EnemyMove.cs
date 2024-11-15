@@ -23,7 +23,7 @@ public class EnemyMove : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(transform.position, movementsPoints[randomNumber].position, movementSpeed * Time.deltaTime);
 

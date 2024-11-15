@@ -8,6 +8,6 @@ public class ManagerInitializer : MonoBehaviour
     {
         GameObject player = GameObject.FindWithTag("Player");
 
-        Manager.player = player;
+        Manager.Instance.player = player;
     }
 }

@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == Manager.player)
+        if (collision.gameObject == Manager.Instance.player)
         {
             Life life = collision.gameObject.GetComponent<Life>();
             life.TakeDamage();
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(Manager.player.transform.position, transform.position) <= viewRange)
+        if (Vector3.Distance(Manager.Instance.player.transform.position, transform.position) <= viewRange)
         {
 
         }

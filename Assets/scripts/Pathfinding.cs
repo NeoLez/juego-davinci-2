@@ -35,7 +35,7 @@ public class Pathfinding : MonoBehaviour
 
     private void Update()
     {
-        Vector2 playerPos = Manager.player.transform.position;
+        Vector2 playerPos = Manager.Instance.player.transform.position;
         if (Vector3.Distance(playerPos, transform.position) < viewDetectionRadius+1)
         {
             if (dothing) {
@@ -52,7 +52,7 @@ public class Pathfinding : MonoBehaviour
                         break;
                     }
 
-                    if (hit.collider.gameObject == Manager.player)
+                    if (hit.collider.gameObject == Manager.Instance.player)
                     {
                         //Debug.Log("playerDetected");
                         targetPosition = playerPos;

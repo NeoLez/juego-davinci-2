@@ -1,0 +1,50 @@
+﻿using UnityEngine;
+using UnityEngine.Assertions;
+
+namespace New
+{
+	public class Movement : MonoBehaviour
+	{
+		[SerializeField] public float speed = 10f;
+		[SerializeField] private float snappiness = 0.01f;
+		[SerializeField] private float pushSnappinessBase = 0.01f;
+		
+		private Rigidbody2D rb;
+		private Vector2 movementVector = Vector2.zero;
+		private Vector2 prevDirection=Vector3.zero;
+		private Vector2 pushDirection =Vector3.zero;
+		private Vector2 prevPushDirection = Vector2.zero;
+		private float pushSnappiness = 0.01f;
+
+		private void Start() {
+			rb = GetComponent<Rigidbody2D>();
+			Assert.IsNotNull(rb, "Player does not have a RigidBody attached");
+		}
+
+		private void FixedUpdate() {
+			prevDirection = Vector2.Lerp(prevDirection, movementVector, snappiness);
+			movementVector = Vector2.zero;
+			
+			if (pushDirection != Vector2.zero) {
+				prevPushDirection = pushDirection;
+				pushDirection = Vector2.zero;
+			}
+			prevPushDirection = Vector2.Lerp(prevPushDirection, Vector2.zero, pushSnappiness);
+
+			rb.MovePosition(transform.position + ((prevDirection.ToVector3() * speed) + prevPushDirection.ToVector3()) * Time.fixedDeltaTime);
+		}
+
+		public void Impulse(Vector2 direction) {
+			pushDirection = direction;
+			pushSnappiness = pushSnappinessBase / pushDirection.magnitude; //No me gusta esto pero bueno xd
+		}
+
+		public void MoveNormalized(Vector2 direction) {
+			movementVector = direction.normalized;
+		}
+
+		public void Move(Vector2 direction) {
+			movementVector = direction;
+		}
+	}
+}
