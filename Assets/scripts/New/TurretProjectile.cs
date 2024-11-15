@@ -41,6 +41,10 @@ namespace New
 				playerMovement.Impulse(transform.right * knockbackAmount);
 				Destroy(gameObject);
 			}
+			
+			if (collider2D.gameObject.layer == 8) {
+				Destroy(gameObject);
+			}
 		}
 	}
 }

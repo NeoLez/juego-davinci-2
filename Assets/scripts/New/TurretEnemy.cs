@@ -10,6 +10,7 @@ namespace New
 		[SerializeField] private GameObject turretProjectile;
 		[SerializeField] private Vector2 offset;
 		[SerializeField] private float shootCooldown = 0.5f;
+		[SerializeField] private float shotPredictionIntensity = 0.5f;
 		private float currentShootCooldown;
 
 		private void FixedUpdate() {
@@ -21,7 +22,9 @@ namespace New
 					GameObject projectile = Instantiate(turretProjectile);
 					projectile.transform.position = transform.position + offset.ToVector3();
 
-					Vector2 targetDirection = player.transform.position - transform.position;
+					Movement playerMovement = player.GetComponent<Movement>();
+					
+					Vector2 targetDirection = (player.transform.position + playerMovement.GetDirectionVector().ToVector3() * playerMovement.speed * shotPredictionIntensity) - transform.position;
 					float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
 					projectile.transform.eulerAngles = new Vector3(0, 0, angle);
 					

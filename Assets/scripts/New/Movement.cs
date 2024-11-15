@@ -16,15 +16,27 @@ namespace New
 		private Vector2 pushDirection =Vector3.zero;
 		private Vector2 prevPushDirection = Vector2.zero;
 		private float pushSnappiness = 0.01f;
-
+		private Vector2 lastMovementDirection = Vector2.zero;
+		private bool isMoving;
+		
 		private void Start() {
 			rb = GetComponent<Rigidbody2D>();
 			Assert.IsNotNull(rb, "Player does not have a RigidBody attached");
 		}
 
 		private void FixedUpdate() {
+			
 			prevDirection = Vector2.Lerp(prevDirection, movementVector, snappiness);
-			movementVector = Vector2.zero;
+			if (movementVector != Vector2.zero) {
+				isMoving = true;
+				lastMovementDirection = movementVector;
+				movementVector = Vector2.zero;
+			}
+			else {
+				isMoving = false;
+			}
+			
+			
 			
 			if (pushDirection != Vector2.zero) {
 				prevPushDirection = pushDirection;
@@ -54,6 +66,14 @@ namespace New
 		}
 		public Vector2 GetMoveVector() {
 			return GetDirectionVector() * speed;
+		}
+
+		public Vector2 GetLastMoveVector() {
+			return lastMovementDirection.normalized;
+		}
+
+		public bool IsMoving() {
+			return isMoving;
 		}
 	}
 }

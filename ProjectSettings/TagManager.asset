@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemies
+  - 
   - Water
   - UI
   - 
   - Player
   - SolidObject
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -41,14 +41,14 @@ TagManager:
   - name: Background
     uniqueID: 2671866677
     locked: 0
-  - name: ObjectsTop
-    uniqueID: 3569202855
+  - name: ObjectsBottom
+    uniqueID: 2157968591
     locked: 0
   - name: PlayArea
     uniqueID: 1153534963
     locked: 0
-  - name: ObjectsBottom
-    uniqueID: 2157968591
+  - name: ObjectsTop
+    uniqueID: 3569202855
     locked: 0
   - name: Default
     uniqueID: 0
