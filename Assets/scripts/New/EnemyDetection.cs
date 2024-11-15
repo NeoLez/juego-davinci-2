@@ -22,7 +22,7 @@ namespace New
 				double offsetAngle = MathUtils.ATan2AngleToNormal(viewDetectionAngleOffset);
 				double rightLimitAngle = MathUtils.NormalizeAngle(offsetAngle - viewDetectionAngle/2);
 				double leftLimitAngle = MathUtils.NormalizeAngle(offsetAngle + viewDetectionAngle/2);
-				Debug.Log(angle + " " + leftLimitAngle + " " + rightLimitAngle);
+				
 				if (leftLimitAngle > rightLimitAngle) {
 					if (angle >= rightLimitAngle && angle <= leftLimitAngle) state = BehaviourState.CHASING;
 					else state = BehaviourState.PATROLLING;
