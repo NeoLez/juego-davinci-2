@@ -11,14 +11,27 @@ namespace New
 		[SerializeField] [Range(0, 50)] private float viewDetectionRadius = 10;
 		[SerializeField] [Range(0, 2 * Mathf.PI)] private float viewDetectionAngle = 60;
 		[SerializeField] [Range(-Mathf.PI, Mathf.PI)] private float viewDetectionAngleOffset = 0;
-		[SerializeField][Range(3, 100)] private int gizmoResolution = 3;
+		[SerializeField] [Range(3, 100)] private int gizmoResolution = 3;
 
 
 		private void FixedUpdate() {
 			Vector2 vectorToPlayer = Manager.Instance.player.transform.position - transform.position;
-			double angle = vectorToPlayer.GetAngle();
-			//TODO complete this
-			double rightAngleLimit = MathUtils.NormalizeAngle(viewDetectionAngleOffset);
+			if (vectorToPlayer.magnitude <= viewDetectionRadius) {
+				double angle = vectorToPlayer.GetAngle();
+
+				double offsetAngle = MathUtils.ATan2AngleToNormal(viewDetectionAngleOffset);
+				double rightLimitAngle = MathUtils.NormalizeAngle(offsetAngle - viewDetectionAngle/2);
+				double leftLimitAngle = MathUtils.NormalizeAngle(offsetAngle + viewDetectionAngle/2);
+				Debug.Log(angle + " " + leftLimitAngle + " " + rightLimitAngle);
+				if (leftLimitAngle > rightLimitAngle) {
+					if (angle >= rightLimitAngle && angle <= leftLimitAngle) state = BehaviourState.CHASING;
+					else state = BehaviourState.PATROLLING;
+				}
+				else {
+					if(angle <= rightLimitAngle && angle >= leftLimitAngle) state = BehaviourState.PATROLLING;
+					else state = BehaviourState.CHASING;
+				}
+			}
 		}
 
 
