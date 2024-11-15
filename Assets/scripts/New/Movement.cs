@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace New
@@ -36,7 +37,8 @@ namespace New
 
 		public void Impulse(Vector2 direction) {
 			pushDirection = direction;
-			pushSnappiness = pushSnappinessBase / pushDirection.magnitude; //No me gusta esto pero bueno xd
+			//pushSnappiness = pushSnappinessBase / pushDirection.magnitude; //No me gusta esto pero bueno xd
+			pushSnappiness = 0.1f;
 		}
 
 		public void MoveNormalized(Vector2 direction) {
@@ -45,6 +47,13 @@ namespace New
 
 		public void Move(Vector2 direction) {
 			movementVector = direction;
+		}
+
+		public Vector2 GetDirectionVector() {
+			return prevDirection + Vector2.zero;
+		}
+		public Vector2 GetMoveVector() {
+			return GetDirectionVector() * speed;
 		}
 	}
 }

@@ -14,7 +14,6 @@ namespace New
 
 		private Movement movement;
 		private int nextPatrollingPositionNumber;
-		private Vector2 prevDirection;
 		private Timer timer;
 		private EnemyDetection enemyDetection;
 
@@ -49,6 +48,8 @@ namespace New
 
 				movement.speed = movementSpeedPatrolling;
 				movement.MoveNormalized(currentTarget.position - transform.position);
+				
+				enemyDetection.SetViewAngleOffset(currentTarget.position - transform.position);
 			}
 		}
 
@@ -58,6 +59,8 @@ namespace New
 				movement.speed = movementSpeedChasing;
 				movement.MoveNormalized(player.transform.position - transform.position);
 			}
+			
+			enemyDetection.SetViewAngleOffset(player.transform.position - transform.position);
 		}
 		
 		public void Wait(float seconds) {
