@@ -18,7 +18,7 @@ namespace New
 
 		private void FixedUpdate() {
 			if (IsPlayerInViewRadius()) {
-				if (IsPlayerInSight()) {
+				if (ViewDetectionUtils.IsInSight(gameObject, Manager.Instance.player)) {
 					state = BehaviourState.CHASING;
 				}
 				else {
@@ -29,27 +29,7 @@ namespace New
 				state = BehaviourState.PATROLLING;
 			}
 		}
-
-
-		private bool IsPlayerInSight() {
-			RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Manager.Instance.player.transform.position - transform.position);
-			Array.Sort(hits, (a, b) => (a.distance.CompareTo(b.distance)));
-
-			foreach (RaycastHit2D hit in hits)
-			{
-
-				if (hit.collider.gameObject.layer == 8)
-				{
-					break;
-				}
-
-				if (hit.collider.gameObject == Manager.Instance.player) {
-					return true;
-				}
-			}
-
-			return false;
-		}
+		
 
 		private bool IsPlayerInViewRadius() {
 			Vector2 vectorToPlayer = Manager.Instance.player.transform.position - transform.position;
