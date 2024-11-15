@@ -11,9 +11,9 @@ TagManager:
   - Enemies
   - Water
   - UI
-  - SolidObject
-  - Player
   - 
+  - Player
+  - SolidObject
   - 
   - 
   - 

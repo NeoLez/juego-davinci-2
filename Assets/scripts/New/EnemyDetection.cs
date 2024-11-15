@@ -8,6 +8,8 @@ namespace New
 		private BehaviourState state = BehaviourState.PATROLLING;
 		[SerializeField] private bool showViewCone = false;
 		[SerializeField] private bool showViewDetectionSphere = false;
+		[SerializeField] private bool showSoundDetectionSphere = false;
+		[SerializeField] [Range(0, 50)] private float soundDetectionRadius = 2;
 		[SerializeField] [Range(0, 50)] private float viewDetectionRadius = 10;
 		[SerializeField] [Range(0, 2 * Mathf.PI)] private float viewDetectionAngle = 60;
 		[SerializeField] [Range(-Mathf.PI, Mathf.PI)] private double viewDetectionAngleOffset = 0;
@@ -15,7 +17,45 @@ namespace New
 		
 
 		private void FixedUpdate() {
+			if (IsPlayerInViewRadius()) {
+				if (IsPlayerInSight()) {
+					state = BehaviourState.CHASING;
+				}
+				else {
+					state = BehaviourState.PATROLLING;
+				}
+			}
+			else {
+				state = BehaviourState.PATROLLING;
+			}
+		}
+
+
+		private bool IsPlayerInSight() {
+			RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Manager.Instance.player.transform.position - transform.position);
+			Array.Sort(hits, (a, b) => (a.distance.CompareTo(b.distance)));
+
+			foreach (RaycastHit2D hit in hits)
+			{
+
+				if (hit.collider.gameObject.layer == 8)
+				{
+					break;
+				}
+
+				if (hit.collider.gameObject == Manager.Instance.player) {
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		private bool IsPlayerInViewRadius() {
 			Vector2 vectorToPlayer = Manager.Instance.player.transform.position - transform.position;
+			if (vectorToPlayer.magnitude <= soundDetectionRadius) {
+				return true;
+			}
 			if (vectorToPlayer.magnitude <= viewDetectionRadius) {
 				double angle = vectorToPlayer.GetAngle();
 
@@ -24,19 +64,15 @@ namespace New
 				double leftLimitAngle = MathUtils.NormalizeAngle(offsetAngle + viewDetectionAngle/2);
 				
 				if (leftLimitAngle > rightLimitAngle) {
-					if (angle >= rightLimitAngle && angle <= leftLimitAngle) state = BehaviourState.CHASING;
-					else state = BehaviourState.PATROLLING;
+					return (angle >= rightLimitAngle && angle <= leftLimitAngle);
 				}
-				else {
-					if(angle <= rightLimitAngle && angle >= leftLimitAngle) state = BehaviourState.PATROLLING;
-					else state = BehaviourState.CHASING;
-				}
+				
+				return !(angle <= rightLimitAngle && angle >= leftLimitAngle);
+				
 			}
-			else {
-				state = BehaviourState.PATROLLING;
-			}
+			
+			return false;
 		}
-
 
 		public void SetViewAngleOffset(Vector2 v) {
 			viewDetectionAngleOffset = v.GetAngle();
@@ -68,6 +104,10 @@ namespace New
 			if (showViewDetectionSphere)
 			{
 				Gizmos.DrawWireSphere(transform.position, viewDetectionRadius);
+			}
+			if (showSoundDetectionSphere)
+			{
+				Gizmos.DrawWireSphere(transform.position, soundDetectionRadius);
 			}
 		}
 	}
