@@ -83,33 +83,13 @@ public class Dialogue : MonoBehaviour
             dialogueMark.SetActive(true);
             Time.timeScale = 1f;
         }
-
-
     }
 
-    
 
-    private void OnTriggerEnter2D(Collider2D Collision)
+    public void SetDialogMarkState(bool state)
     {
-        if (Manager.Instance.player == Collision.gameObject)
-        {
-            isPlayerInRange = true;
-            dialogueMark.SetActive(true);
-        }
-
+        
+        dialogueMark.SetActive(state);
+        
     }
-    private void OnTriggerExit2D(Collider2D Collision)
-    {
-        if (Manager.Instance.player == Collision.gameObject)
-        {
-            isPlayerInRange = false;
-            dialogueMark.SetActive(false);
-        }
-
-    }
-
-    public bool IsPlayerInRange() {
-        return isPlayerInRange;
-    }
-
 }
