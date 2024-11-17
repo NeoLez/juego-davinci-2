@@ -43,12 +43,12 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _InnerRadius: 1
-    - _MaxTransparency: 0.406
-    - _OuterRadius: 2.12
+    - _MaxTransparency: 0.4
+    - _OuterRadius: 2
     - _Radius: 1.3
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerPos: {r: -0.53474027, g: 8.264998, b: 0, a: 0}
+    - _PlayerPos: {r: 71.90388, g: 21.193588, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
