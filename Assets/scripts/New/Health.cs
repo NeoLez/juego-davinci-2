@@ -21,5 +21,9 @@ namespace New
 		{
 			currentLife += amount;
 		}
+
+		public int GetHealth() {
+			return currentLife;
+		}
 	}
 }
