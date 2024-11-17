@@ -8,7 +8,7 @@ namespace New
 		private float timerSeconds;
 
 		/***
-		 * ALWAYS INSTANTIATE IN START AS IT DEPENDS ON A MANAGER GAMEOBJECT EXISTING
+		 * SIEMPRE INSTANCIAR EN START PORQUE DEPENDE DE QUE EL GAMEOBJECT MANAGER EXISTA
 		 */
 		public Timer(UpdateType type) {
 			switch (type) {

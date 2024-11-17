@@ -21,7 +21,7 @@ namespace New
 		
 		private void Start() {
 			rb = GetComponent<Rigidbody2D>();
-			Assert.IsNotNull(rb, "Player does not have a RigidBody attached");
+			Assert.IsNotNull(rb, "Entity does not have a RigidBody attached");
 		}
 
 		private void FixedUpdate() {

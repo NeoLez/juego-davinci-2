@@ -16,6 +16,8 @@ public class Manager : MonoBehaviour
     
     
     public GameObject player;
+    public bool foundKeyOne;
+    public bool foundKeyTwo;
 
 
     public class DeltaTimeEventArgs : EventArgs

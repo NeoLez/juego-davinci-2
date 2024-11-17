@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttackOld : MonoBehaviour
 {
     Rigidbody2D rb2D;
     float bufferWindow = 0.6f;

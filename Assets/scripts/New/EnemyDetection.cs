@@ -61,6 +61,10 @@ namespace New
 		public BehaviourState GetBehaviourState() {
 			return state;
 		}
+
+		public void SetBehaviourState(BehaviourState state) {
+			this.state = state;
+		}
 		
 		public enum BehaviourState
 		{
