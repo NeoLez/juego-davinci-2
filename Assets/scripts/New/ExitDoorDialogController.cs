@@ -1,7 +1,6 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
-namespace New.Materials
+namespace New
 {
 	public class ExitDoorDialogController : MonoBehaviour
 	{
@@ -27,7 +26,7 @@ namespace New.Materials
 				if (isDoorOpen) {
 					lockState = dialogDoorOpen.Interact();
 					if (!lockState) {
-						SceneManager.LoadScene("Victoria");
+						Debug.Log("SceneChange");
 					}
 				}
 				else {

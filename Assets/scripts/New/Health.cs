@@ -20,7 +20,6 @@ namespace New
 		public void Heal(int amount)
 		{
 			currentLife += amount;
-			Debug.Log("Vida recuperada. Vida actual: " + currentLife);
 		}
 	}
 }
