@@ -12,6 +12,7 @@ public class Berries : MonoBehaviour
     {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.F)) {
             Manager.Instance.player.GetComponent<Health>().Heal(1);
+            Destroy(gameObject);
         }
     }
     
