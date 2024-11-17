@@ -4,7 +4,7 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     private bool isPlayerInRange;
-    private bool didDialogueStart;
+    public bool didDialogueStart;
     private int lineIndex;
     private float typingTime = 0.05f;
     
@@ -22,24 +22,26 @@ public class Dialogue : MonoBehaviour
     private TMP_Text dialogueText;
 
 
-    void Update()
+    public bool Interact()
     {
-        if(isPlayerInRange && Input.GetButtonDown("Fire1"))
+        Debug.Log("b");
+        if (!didDialogueStart)
         {
-            if (!didDialogueStart)
-            {
-                 StartDialogue();
-            }
-            else if (dialogueText.text == dialogueLines[lineIndex])
-            {
-                NextDialogueLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                dialogueText.text = dialogueLines[lineIndex];
-            }
+            Debug.Log("c");
+            StartDialogue();
         }
+        else if (dialogueText.text == dialogueLines[lineIndex])
+        { 
+            Debug.Log("d");
+            NextDialogueLine();
+        }
+        else
+        { 
+            Debug.Log("e");
+            StopAllCoroutines(); 
+            dialogueText.text = dialogueLines[lineIndex]; 
+        }
+        return didDialogueStart;
     }
 
     private IEnumerator ShowLine()
@@ -89,7 +91,7 @@ public class Dialogue : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D Collision)
     {
-        if (Manager.Instance.player)
+        if (Manager.Instance.player == Collision.gameObject)
         {
             isPlayerInRange = true;
             dialogueMark.SetActive(true);
@@ -98,12 +100,16 @@ public class Dialogue : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D Collision)
     {
-        if (Manager.Instance.player)
+        if (Manager.Instance.player == Collision.gameObject)
         {
             isPlayerInRange = false;
             dialogueMark.SetActive(false);
         }
 
+    }
+
+    public bool IsPlayerInRange() {
+        return isPlayerInRange;
     }
 
 }
