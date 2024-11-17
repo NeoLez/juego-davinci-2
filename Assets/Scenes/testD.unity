@@ -685,7 +685,8 @@ GameObject:
   m_Component:
   - component: {fileID: 824561733}
   - component: {fileID: 824561732}
-  - component: {fileID: 824561731}
+  - component: {fileID: 824561737}
+  - component: {fileID: 824561736}
   - component: {fileID: 824561734}
   - component: {fileID: 824561735}
   m_Layer: 0
@@ -695,19 +696,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &824561731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824561730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52307fed6cce4a80aa1fdd599df86b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dialogue: {fileID: 824561732}
 --- !u!114 &824561732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,7 +711,7 @@ MonoBehaviour:
   didDialogueStart: 0
   dialogueMark: {fileID: 183799258}
   dialogueLines:
-  - AMOGUS
+  - ...
   - SUGOMA
   dialoguePanel: {fileID: 573070740}
   dialogueText: {fileID: 1596227220}
@@ -735,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824561730}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -815,6 +803,44 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &824561736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824561730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93cf7e81c3e4efe92a57dc253e343b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogDoorClosed: {fileID: 824561737}
+  dialogDoorOpen: {fileID: 824561732}
+--- !u!114 &824561737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824561730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b829edf791240246aba88bcbc06b6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  didDialogueStart: 0
+  dialogueMark: {fileID: 183799258}
+  dialogueLines:
+  - Una puerta hecha de tablas de madera, y placas de hierro. Con tan solo verla
+    entiendes que debes pasar al otro lado.
+  - "La empujas con todas tus fuerzas, pero lo \xFAnico que obtienes es un ligero
+    quejido de las bisagras met\xE1licas."
+  - Parece estar cerrada por llave, aunque inusualmente no cuenta con una sino dos
+    cerraduras.
+  - "Te preguntas si las llaves se encontrar\xE1n en las cercan\xEDas."
+  dialoguePanel: {fileID: 573070740}
+  dialogueText: {fileID: 1596227220}
 --- !u!1 &964831582
 GameObject:
   m_ObjectHideFlags: 0
