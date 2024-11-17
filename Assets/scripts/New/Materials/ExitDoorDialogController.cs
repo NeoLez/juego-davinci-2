@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace New.Materials
 {
@@ -26,7 +27,7 @@ namespace New.Materials
 				if (isDoorOpen) {
 					lockState = dialogDoorOpen.Interact();
 					if (!lockState) {
-						Debug.Log("SceneChange");
+						SceneManager.LoadScene("Victoria");
 					}
 				}
 				else {

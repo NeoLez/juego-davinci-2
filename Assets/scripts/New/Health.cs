@@ -13,7 +13,7 @@ namespace New
 			currentLife -= damage;
 			if (currentLife <= 0)
 			{
-				OnDeathEvent.Invoke(this, EventArgs.Empty);
+				OnDeathEvent?.Invoke(this, EventArgs.Empty);
 			}
 		}
 

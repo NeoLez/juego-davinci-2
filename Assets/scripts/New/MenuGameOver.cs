@@ -7,7 +7,7 @@ using New;
 
 public class MenuGameOver : MonoBehaviour
 {
-    [SerializeField] private GameObject menuGameOver; // Referencia al menú de Game Over
+    [SerializeField] private GameObject menuGameOver; // Referencia al menu de Game Over
     private Health health; // Referencia al script CombateJugador
 
     private void Start()
@@ -15,25 +15,28 @@ public class MenuGameOver : MonoBehaviour
         // Busca al jugador por su tag y obtiene el componente CombateJugador
         health = Manager.Instance.player.GetComponent<Health>(); ;
 
-        // Suscribe el método ActivarMenu al evento MuerteJugador
+        // Suscribe el metodo ActivarMenu al evento MuerteJugador
         health.OnDeathEvent += ActivarMenu;
     }
 
-    // Método que se activa cuando el jugador muere
+    // Metodo que se activa cuando el jugador muere
     private void ActivarMenu(object sender, EventArgs e)
     {
-        menuGameOver.SetActive(true); // Activa el menú de Game Over
+        menuGameOver.SetActive(true); // Activa el menu de Game Over
+        Time.timeScale = 0;
     }
 
-    // Método para reiniciar el nivel actual
+    // Metodo para reiniciar el nivel actual
     public void Reiniciar()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    // Método para cargar el menú inicial
+    // Metodo para cargar el menu inicial
     public void MenuInicial(string nombre)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(nombre);
     }
 }
