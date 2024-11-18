@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System;
 using New;
 
-public class MenuGameOver : MonoBehaviour
+public class GoToScene : MonoBehaviour
 {
     [SerializeField] private GameObject menuGameOver; // Referencia al menu de Game Over
     private Health health; // Referencia al script CombateJugador
@@ -22,7 +22,7 @@ public class MenuGameOver : MonoBehaviour
     // Metodo que se activa cuando el jugador muere
     private void ActivarMenu(object sender, EventArgs e)
     {
-        menuGameOver.SetActive(true); // Activa el menu de Game Over
+        menuGameOver.SetActive(true); 
         Time.timeScale = 0;
     }
 
