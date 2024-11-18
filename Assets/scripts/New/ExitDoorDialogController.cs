@@ -35,10 +35,7 @@ namespace New
 
 					lockState = dialogDoorOpen.Interact();
 					if (!lockState) {
-						SceneManager.LoadScene("Victoria");
-					}
-					else {
-						playedSound = false;
+						SceneManager.LoadScene("Victory");
 					}
 				}
 				else {
