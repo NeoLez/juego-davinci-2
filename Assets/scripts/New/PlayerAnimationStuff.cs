@@ -9,6 +9,7 @@ public class PlayerAnimationStuff : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private Movement movement;
     [SerializeField] private PlayerAttack playerAttack;
+    [SerializeField] private AudioSource audioSource;
 
     private void Start() {
         playerAttack.OnPlayerAttack += () => {
@@ -25,5 +26,9 @@ public class PlayerAnimationStuff : MonoBehaviour
         playerAnimator.SetFloat("Speed", moveVector.magnitude);
         playerAnimator.SetFloat("LastHorizontal", lastMoveVector.x);
         playerAnimator.SetFloat("LastVertical", lastMoveVector.y);
+    }
+
+    void PlayFootstepsSound() {
+        audioSource.Play();
     }
 }
