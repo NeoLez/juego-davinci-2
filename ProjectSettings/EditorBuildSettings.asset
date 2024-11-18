@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start2.unity
     guid: 95d6ed7eae9817a45bb5793715f6dabe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndingScreens/Victoria.unity
     guid: 3fe19e8a2addb4746a067b3457f95f9d
+  - enabled: 1
+    path: Assets/Menu/Scenes/Victory.unity
+    guid: 96ad9db497b92eb42af8f116c6ce11b2
   m_configObjects: {}
