@@ -8,6 +8,7 @@ namespace New
 	{
 		[SerializeField] private int attackDamage;
 		[SerializeField] private int pushStrength;
+		[SerializeField] private AudioClip hitAudio;
 		private Movement movement;
 
 		private void Awake() {
@@ -25,6 +26,8 @@ namespace New
 				
 				playerHealth.TakeDamage(attackDamage);
 				playerMovement.Impulse(((player.transform.position - transform.position).normalized.ToVector2() * pushStrength + movement.GetMoveVector()) * pushStrength);
+				
+				Manager.Instance.PlaySound(hitAudio, 1);
 			}
 		}
 	}

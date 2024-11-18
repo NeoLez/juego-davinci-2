@@ -11,6 +11,7 @@ namespace New
 		[SerializeField] private Vector2 offset;
 		[SerializeField] private float shootCooldown = 0.5f;
 		[SerializeField] private float shotPredictionIntensity = 0.5f;
+		[SerializeField] private AudioSource audioSource;
 		private float currentShootCooldown;
 
 		private void FixedUpdate() {
@@ -28,6 +29,7 @@ namespace New
 					float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
 					projectile.transform.eulerAngles = new Vector3(0, 0, angle);
 					
+					audioSource.Play();
 					currentShootCooldown = shootCooldown;
 				}
 			}

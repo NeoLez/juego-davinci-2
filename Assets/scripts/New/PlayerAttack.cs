@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float knockbackIntensity;
     [SerializeField] private float attackCooldown;
+    [SerializeField] private AudioClip hitAudio;
     private Timer attackTimer;
 
     private void Start() {
@@ -34,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
                     if (hit.gameObject.TryGetComponent(out EnemyDetection detection)) {
                         detection.SetBehaviourState(EnemyDetection.BehaviourState.CHASING);
                     }
+                    
+                    Manager.Instance.PlaySound(hitAudio, 1);
                 }
             }
         }

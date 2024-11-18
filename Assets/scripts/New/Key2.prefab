@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNumber: 2
+  audioClip: {fileID: 8300000, guid: d76f638d185fba8428c53a632531be91, type: 3}
+  volume: 1
 --- !u!50 &6884215966268315189
 Rigidbody2D:
   serializedVersion: 4
