@@ -9,7 +9,7 @@ namespace New
 		private Movement movement;
 		private void Awake() {
 			movement = GetComponent<Movement>();
-			Assert.IsNotNull(movement,"Movement component missing from player");
+			Assert.IsNotNull(movement,"Movement component missing from player - " + gameObject.name);
 		}
 
 		private void Update() {

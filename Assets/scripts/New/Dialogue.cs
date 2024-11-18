@@ -24,20 +24,16 @@ public class Dialogue : MonoBehaviour
 
     public bool Interact()
     {
-        Debug.Log("b");
         if (!didDialogueStart)
         {
-            Debug.Log("c");
             StartDialogue();
         }
         else if (dialogueText.text == dialogueLines[lineIndex])
         { 
-            Debug.Log("d");
             NextDialogueLine();
         }
         else
         { 
-            Debug.Log("e");
             StopAllCoroutines(); 
             dialogueText.text = dialogueLines[lineIndex]; 
         }

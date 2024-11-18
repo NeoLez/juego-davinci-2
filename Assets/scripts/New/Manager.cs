@@ -6,11 +6,16 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public static Manager Instance;
+    [SerializeField] private AudioSource audioSource;
     private void Awake() {
         if(Instance != null)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
         Instance = this;
+    }
+
+    public void PlaySound(AudioClip clip, float vol = 1) {
+        audioSource.PlayOneShot(clip, vol);
     }
     
     

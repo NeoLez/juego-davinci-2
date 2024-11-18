@@ -11,7 +11,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private float knockbackIntensity;
     [SerializeField] private float attackCooldown;
+    [SerializeField] private AudioClip hitAudio;
     private Timer attackTimer;
+
+    public event Action OnPlayerAttack;
 
     private void Start() {
         attackTimer = new Timer(Timer.UpdateType.UPDATE);
@@ -20,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     void Update() {
         if(Input.GetKeyDown(KeyCode.Space) && !attackTimer.IsWaiting()) {
             attackTimer.Wait(attackCooldown);
+            OnPlayerAttack?.Invoke();
             
             Vector2 lookDirection = playerMovement.GetLastMoveVector();
             Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position.ToVector2() + lookDirection * attackSize.x/2, attackSize, Mathf.Rad2Deg * (float)lookDirection.GetAngle());
@@ -34,8 +38,18 @@ public class PlayerAttack : MonoBehaviour
                     if (hit.gameObject.TryGetComponent(out EnemyDetection detection)) {
                         detection.SetBehaviourState(EnemyDetection.BehaviourState.CHASING);
                     }
+                    
+                    Manager.Instance.PlaySound(hitAudio, 1);
                 }
             }
         }
+    }
+
+    public int GetDamage() {
+        return damage;
+    }
+
+    public void SetDamage(int dmg) {
+        damage = dmg;
     }
 }

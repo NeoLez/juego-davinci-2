@@ -7,10 +7,13 @@ namespace New
 	{
 		[SerializeField] private Dialogue dialogDoorClosed;
 		[SerializeField] private Dialogue dialogDoorOpen;
+		[SerializeField] private AudioClip doorOpenAudio;
+		[SerializeField] private AudioClip doorCloseAudio;
 		private bool isPlayerInRange;
 		
 		private bool isDoorOpen;
 		private bool lockState;
+		private bool playedSound;
 		
 		private void Update() {
 			if (!lockState) {
@@ -25,13 +28,29 @@ namespace New
 			if (isPlayerInRange && Input.GetKeyDown(KeyCode.F)) {
 				lockState = true;
 				if (isDoorOpen) {
+					if (!playedSound) {
+						Manager.Instance.PlaySound(doorOpenAudio, 1);
+						playedSound = true;
+					}
+
 					lockState = dialogDoorOpen.Interact();
 					if (!lockState) {
 						SceneManager.LoadScene("Victoria");
 					}
+					else {
+						playedSound = false;
+					}
 				}
 				else {
+					if (!playedSound) {
+						Manager.Instance.PlaySound(doorCloseAudio, 1);
+						playedSound = true;
+					}
+
 					lockState = dialogDoorClosed.Interact();
+					if (!lockState) {
+						playedSound = false;
+					}
 				}
 			}
 		}
