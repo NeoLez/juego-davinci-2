@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private AudioClip hitAudio;
     private Timer attackTimer;
 
+    public event Action OnPlayerAttack;
+
     private void Start() {
         attackTimer = new Timer(Timer.UpdateType.UPDATE);
     }
@@ -21,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     void Update() {
         if(Input.GetKeyDown(KeyCode.Space) && !attackTimer.IsWaiting()) {
             attackTimer.Wait(attackCooldown);
+            OnPlayerAttack?.Invoke();
             
             Vector2 lookDirection = playerMovement.GetLastMoveVector();
             Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position.ToVector2() + lookDirection * attackSize.x/2, attackSize, Mathf.Rad2Deg * (float)lookDirection.GetAngle());
