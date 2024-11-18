@@ -11,6 +11,8 @@ namespace New
 		[SerializeField] private AudioClip hitAudio;
 		private Movement movement;
 
+		public event Action OnEnemyAttack;
+		
 		private void Awake() {
 			movement = GetComponent<Movement>();
 			Assert.IsNotNull(movement, "Movement not found in enemy");
@@ -27,6 +29,7 @@ namespace New
 				playerHealth.TakeDamage(attackDamage);
 				playerMovement.Impulse(((player.transform.position - transform.position).normalized.ToVector2() * pushStrength + movement.GetMoveVector()) * pushStrength);
 				
+				OnEnemyAttack?.Invoke();
 				Manager.Instance.PlaySound(hitAudio, 1);
 			}
 		}
