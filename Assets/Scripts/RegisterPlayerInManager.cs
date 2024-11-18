@@ -6,7 +6,7 @@ namespace New
 	public class RegisterPlayerInManager : MonoBehaviour
 	{
 		
-		private void Start() {
+		private void Update() {
 			Manager.Instance.player = gameObject;
 		}
 		

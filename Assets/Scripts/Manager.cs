@@ -8,9 +8,6 @@ public class Manager : MonoBehaviour
     public static Manager Instance;
     [SerializeField] private AudioSource audioSource;
     private void Awake() {
-        if(Instance != null)
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
         Instance = this;
     }
 
