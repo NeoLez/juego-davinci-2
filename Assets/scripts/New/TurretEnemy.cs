@@ -11,7 +11,10 @@ namespace New
 		[SerializeField] private Vector2 offset;
 		[SerializeField] private float shootCooldown = 0.5f;
 		[SerializeField] private float shotPredictionIntensity = 0.5f;
+		[SerializeField] private Sprite offSprite;
+		[SerializeField] private Sprite onSprite;
 		[SerializeField] private AudioSource audioSource;
+		[SerializeField] private SpriteRenderer spriteRenderer;
 		private float currentShootCooldown;
 
 		private void FixedUpdate() {
@@ -28,9 +31,13 @@ namespace New
 					Vector2 targetDirection = (player.transform.position + playerMovement.GetDirectionVector().ToVector3() * playerMovement.speed * shotPredictionIntensity) - transform.position;
 					float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
 					projectile.transform.eulerAngles = new Vector3(0, 0, angle);
-					
+
+					spriteRenderer.sprite = onSprite;
 					audioSource.Play();
 					currentShootCooldown = shootCooldown;
+				}
+				else {
+					spriteRenderer.sprite = offSprite;
 				}
 			}
 		}
