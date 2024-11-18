@@ -13,6 +13,12 @@ public class MenuInicial : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
     }
+    
+    public void JugarPrototipo()
+    {
+        SceneManager.LoadScene(3);
+    }
+    
     public void Salir()
     {
         Debug.Log("Saliste xd");
