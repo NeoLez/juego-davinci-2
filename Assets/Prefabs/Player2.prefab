@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca3e11741614b2f8dbc60057cf41322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 3437973003919607681}
 --- !u!114 &1541432312227927335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 3437973003919607681}
-  attackSize: {x: 3, y: 0.5}
+  attackSize: {x: 1.5, y: 0.5}
   damage: 1
   knockbackIntensity: 9
   attackCooldown: 0.7
