@@ -9,6 +9,7 @@ namespace New
 		[SerializeField] private float snappiness = 0.01f;
 		[SerializeField] private float pushSnappinessBase = 0.01f;
 		[SerializeField] private float zOffset;
+		[SerializeField] private float height;
 		
 		private Rigidbody2D rb;
 		private Vector2 movementVector = Vector2.zero;
@@ -45,7 +46,7 @@ namespace New
 			prevPushDirection = Vector2.Lerp(prevPushDirection, Vector2.zero, pushSnappiness);
 
 			rb.MovePosition(transform.position + ((prevDirection.ToVector3() * speed) + prevPushDirection.ToVector3()) * Time.fixedDeltaTime);
-			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y + zOffset);
+			transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y + zOffset + height);
 		}
 
 		public void Impulse(Vector2 direction) {
