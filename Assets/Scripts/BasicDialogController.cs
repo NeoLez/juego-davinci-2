@@ -8,7 +8,7 @@ namespace New
 		[SerializeField] private Dialogue _dialogue;
 		private bool isPlayerInRange;
 
-		private void Update() {
+		private void Update() { 
 			if (isPlayerInRange && Input.GetKeyDown(KeyCode.F)) { ;
 				_dialogue.Interact();
 			}

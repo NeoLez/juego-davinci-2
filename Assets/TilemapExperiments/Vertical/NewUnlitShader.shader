@@ -1,8 +1,9 @@
-Shader "Custom/ProximityTransparency"
+Shader "Custom/NewUnlitShader"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _Height ("Tilemap Height", Int) = 0
     }
     SubShader
     {
@@ -39,6 +40,7 @@ Shader "Custom/ProximityTransparency"
             uniform float _InnerRadius;
             uniform float _OuterRadius;
             uniform float _MaxTransparency;
+            int _Height;
 
             v2f vert (appdata v)
             {
@@ -51,30 +53,32 @@ Shader "Custom/ProximityTransparency"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // World-space tile position
-                float3 tilePos = i.worldPos;
-
-                // World-space player position
-                float3 playerPos = _PlayerPos.xyz;
-
-                // Calculate distance in world-space
-                float dist = distance(tilePos.xy, playerPos.xy);
-
-                // Calculate transparency using smoothstep
-                float alpha = 1.0 - (floor(dist/_InnerRadius));
-                if (dist < _InnerRadius)
+                float alpha = 1;
+                int playerTileY = ceil(-_PlayerPos.z);
+                                
+                int tileHeight = (i.worldPos.y >= 0.0) ? int(i.worldPos.y) : int(i.worldPos.y) - 1;
+                tileHeight -= _Height;
+                //float gridY = i.worldPos.y-_Height;
+                //return float4(-_PlayerPos.z/25.0,0,0,1);
+                //return float4(playerGridY/10.0, 0, 0, 1);
+                if ( tileHeight >= _PlayerPos.w && i.worldPos.z <= -_PlayerPos.z)
                 {
-                    alpha = 1.0 - _MaxTransparency;
-                }
-                else
-                {
-                    alpha =1-(1-clamp(0,1,(dist-_InnerRadius)/(_OuterRadius-_InnerRadius)))*_MaxTransparency;
+                    float dist = distance(i.worldPos.xy, _PlayerPos.xy);
+                    if (dist < _InnerRadius)
+                    {
+                        alpha = 1.0 - _MaxTransparency;
+                    }
+                    else
+                    {
+                        alpha =1-(1-clamp(0,1,(dist-_InnerRadius)/(_OuterRadius-_InnerRadius)))*_MaxTransparency;
+                    }
+                    //alpha = 0;
                 }
                 
-                // Sample texture
+                
+                
                 fixed4 col = tex2D(_MainTex, i.uv);
-
-                // Apply transparency
+                
                 col.a *= alpha;
 
                 return col;

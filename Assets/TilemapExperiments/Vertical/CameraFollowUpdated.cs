@@ -4,7 +4,7 @@ using UnityEngine.Assertions;
 
 namespace New
 {
-	public class CameraFollow : MonoBehaviour
+	public class CameraFollowUpdated : MonoBehaviour
 	{
 		[SerializeField] private Vector3 offset;
 		[SerializeField] private float snappiness;
@@ -12,10 +12,10 @@ namespace New
 		[SerializeField] private float lookAheadIntensityMove;
 		[SerializeField] private GameObject camera;
 
-		private Movement playerMovement;
+		private MovementUpdated playerMovement;
 
 		private void Awake() {
-			playerMovement = gameObject.GetComponent<Movement>();
+			playerMovement = gameObject.GetComponent<MovementUpdated>();
 			Assert.IsNotNull(playerMovement, "Player does not have a movement component");
 		}
 

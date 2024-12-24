@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpriteTransparency
-  m_Shader: {fileID: 4800000, guid: 080c96fb14a382d4f9558d30c916febb, type: 3}
+  m_Name: 1
+  m_Shader: {fileID: 4800000, guid: 028ee20648b4664439a50a7881f7f995, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -42,13 +42,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
+    - _Height: 1
     - _InnerRadius: 1
-    - _MaxTransparency: 0.4
-    - _OuterRadius: 2
-    - _Radius: 1.3
+    - _MaxTransparency: 0.5
+    - _OuterRadius: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerPos: {r: -7.977807, g: 0.6192385, b: 0, a: 0}
+    - _PlayerPos: {r: 0, g: 0, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
