@@ -3,6 +3,7 @@ Shader "Custom/NewUnlitShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _NormalMap ("Texture", 2D) = "white" {}
         _Height ("Tilemap Height", Int) = 0
     }
     SubShader
@@ -34,6 +35,7 @@ Shader "Custom/NewUnlitShader"
             };
 
             sampler2D _MainTex;
+            sampler2D _NormalMap;
             float4 _MainTex_ST;
 
             uniform float4 _PlayerPos;
@@ -57,7 +59,7 @@ Shader "Custom/NewUnlitShader"
                 int playerTileY = ceil(-_PlayerPos.z);
                                 
                 int tileHeight = (i.worldPos.y >= 0.0) ? int(i.worldPos.y) : int(i.worldPos.y) - 1;
-                tileHeight -= _Height;
+                tileHeight -= i.worldPos.z;
                 //float gridY = i.worldPos.y-_Height;
                 //return float4(-_PlayerPos.z/25.0,0,0,1);
                 //return float4(playerGridY/10.0, 0, 0, 1);
@@ -75,7 +77,7 @@ Shader "Custom/NewUnlitShader"
                     //alpha = 0;
                 }
                 
-                
+                //return tex2D(_NormalMap, i.uv);
                 
                 fixed4 col = tex2D(_MainTex, i.uv);
                 

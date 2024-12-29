@@ -1,6 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using TilemapExperiments.Drawing;
 using UnityEngine;
 
 public class Manager : MonoBehaviour
@@ -20,6 +20,8 @@ public class Manager : MonoBehaviour
     public GameObject player;
     public bool foundKeyOne;
     public bool foundKeyTwo;
+    public List<SpellSO> spells = new(3);
+    
 
 
     public class DeltaTimeEventArgs : EventArgs
