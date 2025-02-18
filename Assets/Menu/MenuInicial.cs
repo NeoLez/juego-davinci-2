@@ -7,7 +7,7 @@ public class MenuInicial : MonoBehaviour
 {
     public void Jugar()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        TransicionEscenasUI.instance.BloqueSalida(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void JugarAgain()
     {

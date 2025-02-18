@@ -3,23 +3,18 @@ using UnityEngine;
 using TMPro;
 public class Dialogue : MonoBehaviour
 {
+    private AudioSource audioSource;
     private bool isPlayerInRange;
     public bool didDialogueStart;
     private int lineIndex;
     private float typingTime = 0.05f;
-    
-    
-    [SerializeField]
-    private GameObject dialogueMark;
 
-    [SerializeField, TextArea(4, 6)]
-    private string[] dialogueLines;
-
-    [SerializeField]
-    private GameObject dialoguePanel;
-
-    [SerializeField]
-    private TMP_Text dialogueText;
+    [SerializeField] private AudioClip npcVoice;
+    [SerializeField] private AudioClip playerVoice;
+    [SerializeField] private GameObject dialogueMark;
+    [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TMP_Text dialogueText;
 
 
     public bool Interact()

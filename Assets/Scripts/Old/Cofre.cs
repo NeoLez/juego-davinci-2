@@ -4,62 +4,71 @@ using UnityEngine;
 
 public class Cofre : MonoBehaviour
 {
-    public GameObject chocolatada;
+    public GameObject monedaPrefab;
+    public int cantidadMonedas = 1; 
+    public Sprite spriteCerrado, spriteAbierto; 
+    private SpriteRenderer spriteRenderer;
+
     public KeyCode teclaParaAbrir = KeyCode.E;
     private bool estaAbierto = false;
-    bool canBeOpened = false;
+    private bool canBeOpened = false;
 
     void Start()
     {
-        if (chocolatada != null)
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null && spriteCerrado != null)
         {
-            chocolatada.SetActive(false);
+            spriteRenderer.sprite = spriteCerrado; 
         }
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(teclaParaAbrir) && canBeOpened)
+        if (Input.GetKeyDown(teclaParaAbrir) && canBeOpened)
+        {
             AbrirCofre();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == Manager.Instance.player)
+        if (collision.CompareTag("Player"))
+        {
             canBeOpened = true;
+        }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == Manager.Instance.player)
+        if (collision.CompareTag("Player"))
+        {
             canBeOpened = false;
+        }
     }
 
     void AbrirCofre()
     {
-        if (estaAbierto)
-        {
-            Debug.Log("El loot del cofre respawneo :O!.");
-            estaAbierto = false;
-            return;
-        }
+        if (estaAbierto) return;
 
         estaAbierto = true;
         Debug.Log("El cofre se ha abierto.");
 
-        int resultado = Random.Range(0, 2);
-
-        if (resultado == 1)
+        
+        if (spriteRenderer != null && spriteAbierto != null)
         {
-            chocolatada.SetActive(true);
-            Debug.Log("El cofre contiene un objeto.");
+            spriteRenderer.sprite = spriteAbierto;
         }
-        else
+
+        
+        if (monedaPrefab != null)
         {
-            if (chocolatada != null)
+            for (int i = 0; i < cantidadMonedas; i++)
             {
-                chocolatada.SetActive(false);
+                
+                Vector3 posicionMoneda = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0.3f, 0.7f), 0);
+                Instantiate(monedaPrefab, posicionMoneda, Quaternion.identity);
             }
-            Debug.Log("El cofre est� vac�o.");
+            Debug.Log($"Generadas {cantidadMonedas} monedas.");
         }
     }
 }
