@@ -2,15 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using New;
+using Stats;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Movement playerMovement;
     [SerializeField] private Vector2 attackSize;
-    [SerializeField] private int damage;
-    [SerializeField] private float knockbackIntensity;
-    [SerializeField] private float attackCooldown;
+    [SerializeField] private StatProperty damage;
+    [SerializeField] private StatProperty knockbackIntensity;
+    [SerializeField] private StatProperty attackCooldown;
     [SerializeField] private AudioClip hitAudio;
     private Timer attackTimer;
 
@@ -31,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
             foreach (Collider2D hit in hits) {
                 if (hit.gameObject!=gameObject && hit.gameObject.TryGetComponent(out Health life))
                 {
-                    life.TakeDamage(damage);
+                    life.TakeDamage((int)damage);
                     if (hit.gameObject.TryGetComponent(out Movement movement)) {
                         movement.Impulse(lookDirection * knockbackIntensity);
                     }
@@ -46,10 +47,10 @@ public class PlayerAttack : MonoBehaviour
     }
 
     public int GetDamage() {
-        return damage;
+        return (int)damage;
     }
 
     public void SetDamage(int dmg) {
-        damage = dmg;
+        damage.SetBaseValue(dmg);;
     }
 }

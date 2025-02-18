@@ -10,7 +10,7 @@ namespace New
 		[SerializeField] private float snappiness;
 		[SerializeField] private float lookAheadIntensityStill;
 		[SerializeField] private float lookAheadIntensityMove;
-		[SerializeField] private GameObject camera;
+		[SerializeField] private new GameObject camera;
 
 		private Movement playerMovement;
 
