@@ -1735,7 +1735,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1756,7 +1756,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1764,6 +1764,48 @@ TextureImporter:
       bones: []
       spriteID: d6606f2176d0a7242a7fe52a05c42f13
       internalID: -1719140590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 359
+        width: 113
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195d5bb04ca85774091628124628f769
+      internalID: 864384437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 358
+        width: 95
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 1, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5302cb49fc3c6459279e3cf3e2e03e
+      internalID: -1300608973
       vertices: []
       indices: 
       edges: []
@@ -1831,7 +1873,6 @@ TextureImporter:
       TX Plant_53: 1948842709
       TX Plant_54: 778908355
       TX Plant_55: -1406620929
-      TX Plant_56: 1411929719
       TX Plant_57: -823398287
       TX Plant_58: 43053740
       TX Plant_59: -610498960
@@ -1860,6 +1901,8 @@ TextureImporter:
       TX Plant_8: 578878731
       TX Plant_80: 1526293220
       TX Plant_9: -5163831
+      Tree0: 1411929719
+      Tree1: -1300608973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

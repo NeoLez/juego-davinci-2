@@ -49,6 +49,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _PlayerPos: {r: -0.9052456, g: 12.090218, b: 0, a: 0}
+    - _PlayerPos: {r: -0.51618683, g: -1.9496074, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
