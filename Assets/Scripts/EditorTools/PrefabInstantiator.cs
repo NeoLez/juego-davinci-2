@@ -75,6 +75,7 @@ namespace EditorTools
                     if (selectedPrefab != null)
                     {
                         GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab, parentObject);
+                        Undo.RegisterCreatedObjectUndo(instance, "Instantiate Prefab");
                         SpriteSortY[] sprites = instance.GetComponents<SpriteSortY>();
                         instance.transform.position = worldPos;
                         foreach (var sprite in sprites)
