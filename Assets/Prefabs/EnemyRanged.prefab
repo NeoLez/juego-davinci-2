@@ -83,9 +83,11 @@ MonoBehaviour:
   movementSpeedPatrolling: 1.5
   movementSpeedChasing: 2.25
   movementSpeedFleeing: 4.5
-  attackDistance: 0
-  fleeDistance: 0
-  fleeHealth: 0
+  attackDistance: 6
+  fleeDistance: 8
+  shootCooldown: 1
+  healCooldown: 3
+  fleeHealth: 2
   movementsPoints: []
   distanceMin: 0.2
   waitTime: 1

@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ffb1558fb3fad4abea4e55ccf6a499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monedaPrefab: {fileID: 0}
+  monedaPrefab: {fileID: 4704370459960310707, guid: 1173a3b5aae242c4bb6f28ef3c82cba6, type: 3}
   cantidadMonedas: 20
   spriteCerrado: {fileID: 1341016047, guid: eb562c1d652f3c54f9aecd3f4f341976, type: 3}
   spriteAbierto: {fileID: 686500237, guid: eb562c1d652f3c54f9aecd3f4f341976, type: 3}

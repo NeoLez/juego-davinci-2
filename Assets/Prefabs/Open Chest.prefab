@@ -145,14 +145,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ffb1558fb3fad4abea4e55ccf6a499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monedaPrefab: {fileID: 0}
+  monedaPrefab: {fileID: 4704370459960310707, guid: 1173a3b5aae242c4bb6f28ef3c82cba6, type: 3}
   cantidadMonedas: 10
   spriteCerrado: {fileID: -234722223, guid: 766574409e15f4b4692134a7d0eabb72, type: 3}
   spriteAbierto: {fileID: -551284852, guid: 766574409e15f4b4692134a7d0eabb72, type: 3}
   teclaParaAbrir: 102
   requiereLlave: 0
   llaveNecesaria: LlaveCofre
-  audioSource: {fileID: 2373285416330970312}
   sonidoCerrado: {fileID: 0}
   sonidoAbierto: {fileID: 8300000, guid: 2fa78a6f5a8f03a4fb228875ee476ebf, type: 3}
 --- !u!61 &3681465199072873164

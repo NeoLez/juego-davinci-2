@@ -40,10 +40,27 @@ namespace New
 		}
 
 		private void FixedUpdate() {
-			
-			switch (enemyDetection.GetBehaviourState()) {
-				case EnemyDetection.BehaviourState.CHASING: MoveChasing(); break;
-				case EnemyDetection.BehaviourState.PATROLLING: MovePatrolling(); break;
+			if (healTimer != null)
+			{
+				if (!healTimer.IsWaiting())
+				{
+					Debug.Log("El men se curo");
+					healTimer = null;
+				}
+			}else if (shootTimer != null)
+			{
+				if (!shootTimer.IsWaiting())
+				{
+					Debug.Log("El men disparo");
+					shootTimer = null;
+				}
+			}
+			else
+			{
+				switch (enemyDetection.GetBehaviourState()) {
+					case EnemyDetection.BehaviourState.CHASING: MoveChasing(); break;
+					case EnemyDetection.BehaviourState.PATROLLING: MovePatrolling(); break;
+				}
 			}
 		}
 
@@ -70,7 +87,6 @@ namespace New
 				Vector2 vectorToPlayer = player.transform.position - transform.position;
 				if (health.GetHealth() > fleeHealth) //Normal Attack Behaviour
 				{
-					Debug.Log("A");
 					movement.speed.SetBaseValue(movementSpeedChasing);
 					if (attackDistance < vectorToPlayer.magnitude)
 					{
@@ -78,13 +94,12 @@ namespace New
 					}
 					else
 					{
-						Debug.Log("I am shooting player");
+						shootTimer = new Timer(Timer.UpdateType.UPDATE);
 						shootTimer.Wait(shootCooldown);
 					}
 				}
 				else //Flee
 				{
-					Debug.Log("B");
 					movement.speed.SetBaseValue(movementSpeedFleeing);
 					if (fleeDistance > vectorToPlayer.magnitude)
 					{
@@ -92,7 +107,7 @@ namespace New
 					}
 					else
 					{
-						Debug.Log("I am healing");
+						healTimer = new Timer(Timer.UpdateType.UPDATE);
 						healTimer.Wait(healCooldown);
 					}
 				}
