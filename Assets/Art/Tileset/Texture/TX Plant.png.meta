@@ -1777,7 +1777,7 @@ TextureImporter:
         width: 113
         height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1798,7 +1798,7 @@ TextureImporter:
         width: 95
         height: 137
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 1, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1806,6 +1806,27 @@ TextureImporter:
       bones: []
       spriteID: db5302cb49fc3c6459279e3cf3e2e03e
       internalID: -1300608973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 361
+        width: 79
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00bd158686a14c74e9af9db9a78226bd
+      internalID: 1362602916
       vertices: []
       indices: 
       edges: []
@@ -1903,6 +1924,7 @@ TextureImporter:
       TX Plant_9: -5163831
       Tree0: 1411929719
       Tree1: -1300608973
+      Tree2: 1362602916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

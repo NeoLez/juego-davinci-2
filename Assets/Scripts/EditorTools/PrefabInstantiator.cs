@@ -1,0 +1,91 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+
+namespace EditorTools
+{
+    public class PrefabInstantiatorWindow : EditorWindow
+    {
+        // List of prefabs to choose from
+        public List<GameObject> prefabs = new List<GameObject>();
+        public Transform parentObject;
+        private bool isActive = false;
+
+        [MenuItem("Tools/2D Prefab Instantiator")]
+        public static void ShowWindow()
+        {
+            GetWindow<PrefabInstantiatorWindow>("2D Prefab Instantiator");
+        }
+
+        void OnGUI()
+        {
+            GUILayout.Label("Set Up Prefab Instantiation", EditorStyles.boldLabel);
+            parentObject = (Transform)EditorGUILayout.ObjectField("Parent Object", parentObject, typeof(Transform), true);
+            // Allow the user to set the number of prefabs
+            int newCount = EditorGUILayout.IntField("Number of Prefabs", prefabs.Count);
+            // Adjust the list size if needed
+            while (newCount > prefabs.Count)
+                prefabs.Add(null);
+            while (newCount < prefabs.Count)
+                prefabs.RemoveAt(prefabs.Count - 1);
+
+            // Display an ObjectField for each prefab in the list
+            for (int i = 0; i < prefabs.Count; i++)
+            {
+                prefabs[i] = (GameObject)EditorGUILayout.ObjectField("Prefab " + (i + 1), prefabs[i], typeof(GameObject), false);
+            }
+
+            GUILayout.Space(10);
+            // Toggle the instantiation mode on and off
+            if (!isActive)
+            {
+                if (GUILayout.Button("Start Instantiating"))
+                {
+                    isActive = true;
+                    SceneView.duringSceneGui += OnSceneGUI;
+                }
+            }
+            else
+            {
+                if (GUILayout.Button("Stop Instantiating"))
+                {
+                    isActive = false;
+                    SceneView.duringSceneGui -= OnSceneGUI;
+                }
+            }
+        }
+
+        void OnSceneGUI(SceneView sceneView)
+        {
+            Event e = Event.current;
+            // Listen for left mouse button click
+            if (e.type == EventType.MouseDown && e.button == 0)
+            {
+                // Convert the mouse position to a world position.
+                Vector3 worldPos = HandleUtility.GUIPointToWorldRay(e.mousePosition).origin;
+                // For a 2D game, force z to 0
+                worldPos.z = 0;
+
+                // If at least one prefab exists in the list, choose one at random.
+                if (prefabs.Count > 0)
+                {
+                    int randomIndex = Random.Range(0, prefabs.Count);
+                    GameObject selectedPrefab = prefabs[randomIndex];
+                    if (selectedPrefab != null)
+                    {
+                        GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab, parentObject);
+                        SpriteSortY[] sprites = instance.GetComponents<SpriteSortY>();
+                        instance.transform.position = worldPos;
+                        foreach (var sprite in sprites)
+                        {
+                            sprite.UpdateOrderInLayer((int)(sprite.gameObject.transform.position.y * -5.0f));
+                        }
+                    }
+                }
+                // Use the event so it isn't processed further
+                e.Use();
+            }
+        }
+    }
+}

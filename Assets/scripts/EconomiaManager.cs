@@ -35,11 +35,6 @@ public class GameManager : MonoBehaviour
     public void SumarMoneda(int cantidad)
     {
         monedasRecolectadas += cantidad;
-
-        if (audioSource != null && sonidoMoneda != null)
-        {
-            audioSource.PlayOneShot(sonidoMoneda, volumenSonidos);
-        }
     }
 
     //SISTEMA DE LLAVES

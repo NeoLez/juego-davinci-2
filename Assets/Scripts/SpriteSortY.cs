@@ -4,16 +4,16 @@ using UnityEngine.Assertions;
 
 public class SpriteSortY : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-
-    private void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        Assert.IsNotNull(spriteRenderer, "No Sprite Renderer to sort");
-    }
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     void Update()
     {
-        spriteRenderer.sortingOrder = (int)((Manager.Instance.player.transform.position.y - transform.position.y) * 100);
+        UpdateOrderInLayer((int)((Manager.Instance.player.transform.position.y - transform.position.y) * 100));
     }
+
+    public void UpdateOrderInLayer(int orderInLayer)
+    {
+        spriteRenderer.sortingOrder = orderInLayer;
+    }
+    
 }
