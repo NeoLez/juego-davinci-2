@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using Stats;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -6,9 +7,8 @@ namespace New
 {
 	public class Movement : MonoBehaviour
 	{
-		[SerializeField] public float speed = 10f;
+		[SerializeField] public StatProperty speed;
 		[SerializeField] private float snappiness = 0.01f;
-		[SerializeField] private float pushSnappinessBase = 0.01f;
 		
 		private Rigidbody2D rb;
 		private Vector2 movementVector = Vector2.zero;

@@ -273,7 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91585f71247a4dc8b550c62f60704017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed:
+    baseValue: 5
   snappiness: 0.4
   pushSnappinessBase: 0.2
 --- !u!114 &6377242890386211860
@@ -417,9 +418,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 3437973003919607681}
   attackSize: {x: 1.5, y: 0.5}
-  damage: 1
-  knockbackIntensity: 9
-  attackCooldown: 0.7
+  damage:
+    baseValue: 1
+  knockbackIntensity:
+    baseValue: 9
+  attackCooldown:
+    baseValue: 0.7
   hitAudio: {fileID: 8300000, guid: 565de666e6f3d2d47bddc42cf5f32f7b, type: 3}
 --- !u!114 &1458041292225534341
 MonoBehaviour:

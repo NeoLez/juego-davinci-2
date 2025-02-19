@@ -46,7 +46,7 @@ namespace New
 					timer.Wait(waitTime);
 				}
 
-				movement.speed = movementSpeedPatrolling;
+				movement.speed.SetBaseValue(movementSpeedPatrolling);
 				movement.MoveNormalized(currentTarget.position - transform.position);
 				
 				enemyDetection.SetViewAngleOffset(currentTarget.position - transform.position);
@@ -56,7 +56,7 @@ namespace New
 		private void MoveChasing() {
 			GameObject player = Manager.Instance.player;
 			if (player) {
-				movement.speed = movementSpeedChasing;
+				movement.speed.SetBaseValue(movementSpeedChasing);
 				movement.MoveNormalized(player.transform.position - transform.position);
 			}
 			
