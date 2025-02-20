@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 
 namespace EditorTools
 {
@@ -87,6 +86,11 @@ namespace EditorTools
                 // Use the event so it isn't processed further
                 e.Use();
             }
+        }
+        void OnDisable()
+        {
+            // Clean up the SceneView event if it was still registered
+            SceneView.duringSceneGui -= OnSceneGUI;
         }
     }
 }
