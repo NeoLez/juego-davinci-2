@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 2279047732468451074}
   - component: {fileID: 5831412323432522034}
   - component: {fileID: 6487119895906695610}
+  - component: {fileID: 8459310162905935437}
   m_Layer: 0
   m_Name: Tree1
   m_TagString: Untagged
@@ -303,3 +304,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 818515981351600655}
+--- !u!114 &8459310162905935437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883929169794768686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8377a7e1a6b6084abe4d94dd90373f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4018628885749530126}

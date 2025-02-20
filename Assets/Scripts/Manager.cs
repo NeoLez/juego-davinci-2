@@ -7,6 +7,8 @@ public class Manager : MonoBehaviour
 {
     public static Manager Instance;
     [SerializeField] private AudioSource audioSource;
+    public Material RegularSpriteMaterial;
+    public Material TransparencySpriteMaterial;
     private void Awake() {
         Instance = this;
     }

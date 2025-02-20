@@ -338860,6 +338860,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1757039033}
+  RegularSpriteMaterial: {fileID: 2100000, guid: c2c75d3b76a5607419619ab050f99a84, type: 2}
+  TransparencySpriteMaterial: {fileID: 2100000, guid: 859e197f83a0382438e4045426a12c4b, type: 2}
   player: {fileID: 1299868374}
   foundKeyOne: 0
   foundKeyTwo: 0
