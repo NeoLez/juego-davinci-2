@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Random = UnityEngine.Random;
 
 namespace New
 {
@@ -13,11 +14,16 @@ namespace New
 		[SerializeField] private float fleeDistance;
 		[SerializeField] private float shootCooldown;
 		[SerializeField] private float healCooldown;
+		[SerializeField] private int healAmount;
 		[SerializeField] private int fleeHealth;
 		[SerializeField] private Transform[] movementsPoints;
 		[SerializeField] private float distanceMin;
 		[SerializeField] private float waitTime;
-
+		[SerializeField] private GameObject fireballPrefab;
+		[SerializeField] private ParticleSystem healParticleSystem;
+		[SerializeField] private AudioClip healSound;
+		[SerializeField] private AudioClip fireballShootSound;
+		
 		private Movement movement;
 		private Health health;
 		private int nextPatrollingPositionNumber;
@@ -44,15 +50,25 @@ namespace New
 			{
 				if (!healTimer.IsWaiting())
 				{
-					Debug.Log("El men se curo");
+					healParticleSystem.Emit(50);
+					health.Heal(healAmount);
+					Manager.Instance.PlaySound(healSound);
 					healTimer = null;
+					enemyDetection.SetViewAngleOffset(Manager.Instance.player.transform.position - transform.position);
 				}
 			}else if (shootTimer != null)
 			{
 				if (!shootTimer.IsWaiting())
 				{
-					Debug.Log("El men disparo");
+					GameObject fireball = Instantiate(fireballPrefab);
+					fireball.transform.position = transform.position;
+					FireballProjectile fireballScript = fireball.GetComponent<FireballProjectile>();
+					fireballScript.angle = (float)(Manager.Instance.player.transform.position - transform.position).ToVector2().GetAngle();
+					fireballScript.amplitude = Random.Range(0.3f, 1.5f) * Math.Sign(Random.Range(-1.0f, 1.0f));
+					
+					Manager.Instance.PlaySound(fireballShootSound);
 					shootTimer = null;
+					enemyDetection.SetViewAngleOffset(Manager.Instance.player.transform.position - transform.position);
 				}
 			}
 			else

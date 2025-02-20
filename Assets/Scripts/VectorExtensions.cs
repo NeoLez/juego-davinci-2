@@ -9,12 +9,11 @@ namespace New
 			return new Vector3(v.x, v.y, 0);
 		}
 
-		public static void Rotate(this Vector2 v, float angle) {
-			Debug.Log(v.x);
-			Debug.Log(v.x*(Mathf.Cos(angle) + Mathf.Sin(angle)));
-			v.x = (float)(v.x*(Mathf.Cos(angle) + Mathf.Sin(angle)));
-			Debug.Log(v.x);
-			v.y = (float)(v.y*(Mathf.Cos(angle) - Mathf.Sin(angle)));
+		public static Vector2 Rotated(this Vector2 v, float angle) {
+			float newX = v.x*Mathf.Cos(angle) - v.y*Mathf.Sin(angle);
+			v.y = v.x*Mathf.Sin(angle) + v.y*Mathf.Cos(angle);
+			v.x = newX;
+			return v;
 		}
 		
 		public static Vector2 ToVector2(this Vector3 v) {
