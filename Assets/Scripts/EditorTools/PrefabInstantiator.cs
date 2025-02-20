@@ -8,6 +8,7 @@ namespace EditorTools
     {
         // List of prefabs to choose from
         public List<GameObject> prefabs = new List<GameObject>();
+        public Grid grid;
         public Transform parentObject;
         private bool isActive = false;
 
@@ -20,6 +21,7 @@ namespace EditorTools
         void OnGUI()
         {
             GUILayout.Label("Set Up Prefab Instantiation", EditorStyles.boldLabel);
+            grid = (Grid)EditorGUILayout.ObjectField("Grid", grid, typeof(Grid), true);
             parentObject = (Transform)EditorGUILayout.ObjectField("Parent Object", parentObject, typeof(Transform), true);
             // Allow the user to set the number of prefabs
             int newCount = EditorGUILayout.IntField("Number of Prefabs", prefabs.Count);
@@ -76,7 +78,13 @@ namespace EditorTools
                         GameObject instance = (GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab, parentObject);
                         Undo.RegisterCreatedObjectUndo(instance, "Instantiate Prefab");
                         SpriteSortY[] sprites = instance.GetComponents<SpriteSortY>();
+                        
+                        Debug.Log(worldPos.x + " " + worldPos.y);
+                        worldPos.x = snapNumber(worldPos.x, grid.cellSize.x, grid.gameObject.transform.position.x);
+                        worldPos.y = snapNumber(worldPos.y, grid.cellSize.y, grid.gameObject.transform.position.y);
                         instance.transform.position = worldPos;
+                        Debug.Log(worldPos.x + " " + worldPos.y);
+                        
                         foreach (var sprite in sprites)
                         {
                             sprite.UpdateOrderInLayer((int)(sprite.gameObject.transform.position.y * -5.0f));
@@ -91,6 +99,19 @@ namespace EditorTools
         {
             // Clean up the SceneView event if it was still registered
             SceneView.duringSceneGui -= OnSceneGUI;
+        }
+
+        private float snapNumber(float x, float stepSize, float offset)
+        {
+            x -= offset;
+            if (x >= 0)
+            {
+                if (x == 0) x = 1;
+                x = (Mathf.Ceil(x / stepSize) - 1) * stepSize + stepSize/2 + offset;
+            }
+            else if (x < 0)
+                x = (Mathf.Floor(x / stepSize) + 1) * stepSize + stepSize/2 + offset;
+            return x;
         }
     }
 }
