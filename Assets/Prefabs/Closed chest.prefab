@@ -154,6 +154,12 @@ MonoBehaviour:
   llaveNecesaria: LlaveCofre
   sonidoCerrado: {fileID: 8300000, guid: d82eea02956cee549923828940437fcc, type: 3}
   sonidoAbierto: {fileID: 8300000, guid: 2fa78a6f5a8f03a4fb228875ee476ebf, type: 3}
+  coinDropSounds:
+  - {fileID: 8300000, guid: e4d97a88d1cfd6f4c9814077c2f5c4a9, type: 3}
+  - {fileID: 8300000, guid: 4886ddf8f04ff8e4b8de8d619ec9419f, type: 3}
+  - {fileID: 8300000, guid: a37d1241ad42f7446a34cf142b95470c, type: 3}
+  - {fileID: 8300000, guid: d8806d23a43f1aa43a5235d74e63b79e, type: 3}
+  - {fileID: 8300000, guid: f1c065ec8b7465549ba8734e96f36aac, type: 3}
 --- !u!61 &5296642540381880647
 BoxCollider2D:
   m_ObjectHideFlags: 0

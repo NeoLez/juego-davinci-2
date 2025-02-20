@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using New;
 using UnityEngine;
 
-public class Cofre : MonoBehaviour
+public class Chest : MonoBehaviour
 {
     public GameObject monedaPrefab;
     public int cantidadMonedas = 1;
@@ -20,6 +21,7 @@ public class Cofre : MonoBehaviour
     [Header("Sonidos")]
     public AudioClip sonidoCerrado; 
     public AudioClip sonidoAbierto;
+    public List<AudioClip> coinDropSounds;
 
     void Start()
     {
@@ -68,10 +70,10 @@ public class Cofre : MonoBehaviour
             return;
         }
 
-        AbrirCofre();
+        StartCoroutine(AbrirCofre());
     }
 
-    void AbrirCofre()
+    IEnumerator AbrirCofre()
     {
         estaAbierto = true;
         Debug.Log("¡El cofre se ha abierto!");
@@ -95,7 +97,11 @@ public class Cofre : MonoBehaviour
             for (int i = 0; i < cantidadMonedas; i++)
             {
                 Vector3 posicionMoneda = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0.3f, 0.7f), 0);
-                Instantiate(monedaPrefab, posicionMoneda, Quaternion.identity);
+                GameObject coin = Instantiate(monedaPrefab, posicionMoneda, Quaternion.identity);
+                Vector2 impulse = new Vector2(Random.Range(-2f, 2f), Random.Range(1.0f, 4.0f));
+				coin.GetComponent<Movement>().Impulse(impulse * 3);
+                GameManager.Instance.ReproducirSonido(coinDropSounds[Mathf.FloorToInt(Random.Range(0,coinDropSounds.Count))]);
+                yield return new WaitForSeconds(0.1f);
             }
         }
     }
