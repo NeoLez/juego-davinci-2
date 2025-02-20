@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3716454757485416270}
   - component: {fileID: 5296642540381880647}
   - component: {fileID: 5460973267523220086}
+  - component: {fileID: 3175699124024801614}
   m_Layer: 0
   m_Name: Closed chest
   m_TagString: Untagged
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1153534963
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1341016047, guid: eb562c1d652f3c54f9aecd3f4f341976, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -301,3 +302,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3175699124024801614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653489253796535659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40c90d2203a60946a92617dd6fa8f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5249746223638025371}

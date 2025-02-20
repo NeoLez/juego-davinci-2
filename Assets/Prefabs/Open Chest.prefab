@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4731689647128194307}
   - component: {fileID: 3681465199072873164}
   - component: {fileID: 2373285416330970312}
+  - component: {fileID: 5699974594768737202}
   m_Layer: 0
   m_Name: Open Chest
   m_TagString: Untagged
@@ -301,3 +302,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5699974594768737202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482065509406375385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40c90d2203a60946a92617dd6fa8f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 686113565961248517}

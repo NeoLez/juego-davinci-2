@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9009445841773490775}
   - component: {fileID: 8955508135948637320}
   - component: {fileID: 3692545511918350462}
+  - component: {fileID: 5926533089592810938}
   m_Layer: 0
   m_Name: Powerup
   m_TagString: Untagged
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2136998705
-  m_SortingLayer: -3
+  m_SortingLayerID: 1153534963
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ab852637deaa19b419c3c9bcdc09d0da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -143,3 +144,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &5926533089592810938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220411361129363504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40c90d2203a60946a92617dd6fa8f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 9009445841773490775}
