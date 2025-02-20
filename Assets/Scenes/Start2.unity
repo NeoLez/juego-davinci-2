@@ -338071,11 +338071,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4869224257144421209, guid: af8d25e784f29004c8b77b71321fa4c1, type: 3}
   m_PrefabInstance: {fileID: 1392500438}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1427120795 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3158558353578105967, guid: af8d25e784f29004c8b77b71321fa4c1, type: 3}
-  m_PrefabInstance: {fileID: 1392500438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1433876280
 GameObject:
   m_ObjectHideFlags: 0
@@ -338993,11 +338988,6 @@ MonoBehaviour:
   sonidoMoneda: {fileID: 8300000, guid: 9340850bd156f1d4ba051185d00f70e1, type: 3}
   sonidoLlave: {fileID: 0}
   volumenSonidos: 0.12
---- !u!1 &1787753376 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3158558353578105967, guid: af8d25e784f29004c8b77b71321fa4c1, type: 3}
-  m_PrefabInstance: {fileID: 1396254407213968303}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1829057907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -339456,8 +339446,9 @@ MonoBehaviour:
   costoMonedas: 10
   objetosPosibles:
   - {fileID: 1229149641}
-  - {fileID: 1427120795}
-  - {fileID: 1787753376}
+  - {fileID: 7002527490837212662, guid: efe2290789d0d464eb166655f34eea84, type: 3}
+  - {fileID: 7895562004123391251, guid: f5efdbd7b3beb9843a579ab4e9c9e33a, type: 3}
+  - {fileID: 798011592441037610, guid: 0bd4054bb83a3804cb4b988b2d8532ca, type: 3}
   spawnPoint: {fileID: 1107168921}
   audioSource: {fileID: 1949326264}
   sonidoError: {fileID: 8300000, guid: d82eea02956cee549923828940437fcc, type: 3}
@@ -339586,7 +339577,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.201
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -340881,6 +340872,10 @@ PrefabInstance:
     - target: {fileID: 2482065509406375385, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_Name
       value: Open Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731689647128194307, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
+      propertyPath: cantidadMonedas
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6218190697203931031, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,7 +20,17 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !picked)
+        HandleCollision(collision.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        HandleCollision(other.gameObject);
+    }
+
+    private void HandleCollision(GameObject collidedObject)
+    {
+        if (collidedObject.CompareTag("Player") && !picked)
         {
             picked = true;
             spriteRenderer.color = Color.clear;
@@ -32,6 +39,4 @@ public class Coin : MonoBehaviour
             Destroy(gameObject, audioClip.length+0.5f);
         }
     }
-    
-    
 }

@@ -9,9 +9,9 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Movement playerMovement;
     [SerializeField] private Vector2 attackSize;
-    [SerializeField] private StatProperty damage;
-    [SerializeField] private StatProperty knockbackIntensity;
-    [SerializeField] private StatProperty attackCooldown;
+    [SerializeField] public StatProperty damage;
+    [SerializeField] public StatProperty knockbackIntensity;
+    [SerializeField] public StatProperty attackCooldown;
     [SerializeField] private AudioClip hitAudio;
     private Timer attackTimer;
 

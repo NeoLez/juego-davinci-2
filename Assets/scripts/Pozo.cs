@@ -49,10 +49,9 @@ public class Pozo : MonoBehaviour
     {
         if (objetosPosibles.Count > 0)
         {
-            int indiceAleatorio = Random.Range(0, objetosPosibles.Count); 
+            int indiceAleatorio = Mathf.FloorToInt(Random.Range(0, objetosPosibles.Count)); 
             Vector3 posicionSpawn = spawnPoint.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0); 
-
-            Instantiate(objetosPosibles[indiceAleatorio], posicionSpawn, Quaternion.identity);
+            GameObject obh = Instantiate(objetosPosibles[indiceAleatorio], posicionSpawn, Quaternion.identity);
         }
     }
 

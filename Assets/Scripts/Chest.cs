@@ -45,7 +45,6 @@ public class Chest : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             jugadorCerca = true;
-            Debug.Log("Presiona 'F' para abrir el cofre.");
         }
     }
 
@@ -63,9 +62,6 @@ public class Chest : MonoBehaviour
 
         if (requiereLlave && !GameManager.Instance.TieneLlave(llaveNecesaria))
         {
-            Debug.Log("Necesitas la llave para abrir este cofre.");
-
-            
             GameManager.Instance.ReproducirSonido(sonidoCerrado);
             return;
         }
@@ -76,7 +72,6 @@ public class Chest : MonoBehaviour
     IEnumerator AbrirCofre()
     {
         estaAbierto = true;
-        Debug.Log("¡El cofre se ha abierto!");
 
         if (spriteRenderer != null && spriteAbierto != null)
         {
