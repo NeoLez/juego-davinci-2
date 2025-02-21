@@ -12,7 +12,7 @@ namespace New
 			health.OnDeathEvent += Die;
 		}
 
-		private void Die(object sender, EventArgs args) {
+		private void Die() {
 			Destroy(gameObject);
 		}
 	}

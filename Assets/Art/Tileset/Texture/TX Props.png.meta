@@ -2735,7 +2735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrateClosed
+      name: CrateSmall
       rect:
         serializedVersion: 2
         x: 163
@@ -2848,7 +2848,7 @@ TextureImporter:
         width: 57
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2881,7 +2881,7 @@ TextureImporter:
       ChestClosed: -1800012833
       ChestOpen: -667148608
       CrateBig: 1222263704
-      CrateClosed: 1436557940
+      CrateSmall: 1436557940
       MonolithBroken: -2146680361
       MonolithMedium: 668907809
       MonolithTall: -2127454676

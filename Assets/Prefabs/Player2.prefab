@@ -276,7 +276,6 @@ MonoBehaviour:
   speed:
     baseValue: 5
   snappiness: 0.4
-  pushSnappinessBase: 0.2
 --- !u!114 &6377242890386211860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLife: 2
+  hitSound: {fileID: 8300000, guid: 565de666e6f3d2d47bddc42cf5f32f7b, type: 3}
+  deathSound: {fileID: 8300000, guid: 565de666e6f3d2d47bddc42cf5f32f7b, type: 3}
 --- !u!114 &8240870137259605363
 MonoBehaviour:
   m_ObjectHideFlags: 0

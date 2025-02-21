@@ -13,7 +13,7 @@ namespace New
 			health.OnDeathEvent += DropKey;
 		}
 
-		private void DropKey(object sender, EventArgs args) {
+		private void DropKey() {
 			GameObject key = Instantiate(keyPrefab);
 			key.transform.position = transform.position;
 			key.GetComponent<Movement>().Impulse(Random.insideUnitCircle * 7);

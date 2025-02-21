@@ -39,8 +39,6 @@ public class PlayerAttack : MonoBehaviour
                     if (hit.gameObject.TryGetComponent(out EnemyDetection detection)) {
                         detection.SetBehaviourState(EnemyDetection.BehaviourState.CHASING);
                     }
-                    
-                    Manager.Instance.PlaySound(hitAudio, 1);
                 }
             }
         }

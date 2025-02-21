@@ -20,7 +20,7 @@ public class GoToScene : MonoBehaviour
     }
 
     // Metodo que se activa cuando el jugador muere
-    private void ActivarMenu(object sender, EventArgs e)
+    private void ActivarMenu()
     {
         menuGameOver.SetActive(true); 
         Time.timeScale = 0;

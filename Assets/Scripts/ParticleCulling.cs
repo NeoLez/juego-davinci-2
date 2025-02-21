@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ParticleCulling : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private new ParticleSystem particleSystem;
 
     private static float checkFrequency = 2;
     private static float minDistance = 20;
