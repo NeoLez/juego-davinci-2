@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Pozo : MonoBehaviour
 {
-    public int costoMonedas = 5; 
+    public int costoMonedas = 5;
     private bool jugadorCerca = false;
+    private int intentosFallidos = 0;
+
+    [Header("Configuración del castigo")]
+    public int maxIntentosFallidos = 3; // Intentos fallidos antes del castigo
+    public List<GameObject> enemigosPosibles; // Enemigos que aparecerán
+    public List<Transform> spawnPointsEnemigos; // Lugares donde aparecerán
 
     [Header("Objetos del Pozo")]
-    public List<GameObject> objetosPosibles; 
-    public Transform spawnPoint; 
+    public List<GameObject> objetosPosibles;
+    public Transform spawnPoint;
 
     [Header("Sonidos")]
     public AudioSource audioSource;
-    public AudioClip sonidoError; 
-    public AudioClip sonidoExito; 
+    public AudioClip sonidoError;
+    public AudioClip sonidoExito;
+    public AudioClip sonidoCastigo;
+    [Range(0f, 1f)] public float volumenSonido = 1f; // Ajuste de volumen en el inspector
 
     void Update()
     {
@@ -28,30 +36,52 @@ public class Pozo : MonoBehaviour
     {
         if (GameManager.Instance.MonedasRecolectadas >= costoMonedas)
         {
-            GameManager.Instance.SumarMoneda(-costoMonedas); 
+            GameManager.Instance.SumarMoneda(-costoMonedas);
             SoltarObjetoAleatorio();
-
-            if (audioSource != null && sonidoExito != null)
-            {
-                audioSource.PlayOneShot(sonidoExito);
-            }
+            intentosFallidos = 0; // Reseteamos los intentos fallidos
+            ReproducirSonido(sonidoExito);
         }
         else
         {
-            if (audioSource != null && sonidoError != null)
+            intentosFallidos++;
+            ReproducirSonido(sonidoError);
+
+            if (intentosFallidos >= maxIntentosFallidos)
             {
-                audioSource.PlayOneShot(sonidoError);
+                ActivarCastigo();
+                intentosFallidos = 0; // Reiniciamos el contador de intentos fallidos
             }
         }
     }
 
     private void SoltarObjetoAleatorio()
     {
-        if (objetosPosibles.Count > 0)
+        if (spawnPoint == null || objetosPosibles.Count == 0) return;
+
+        int indiceAleatorio = Random.Range(0, objetosPosibles.Count);
+        Vector3 posicionSpawn = spawnPoint.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+        Instantiate(objetosPosibles[indiceAleatorio], posicionSpawn, Quaternion.identity);
+    }
+
+    private void ActivarCastigo()
+    {
+        if (spawnPointsEnemigos.Count == 0 || enemigosPosibles.Count == 0) return;
+
+        int cantidadEnemigos = Mathf.Min(enemigosPosibles.Count, spawnPointsEnemigos.Count);
+
+        for (int i = 0; i < cantidadEnemigos; i++)
         {
-            int indiceAleatorio = Mathf.FloorToInt(Random.Range(0, objetosPosibles.Count)); 
-            Vector3 posicionSpawn = spawnPoint.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0); 
-            GameObject obh = Instantiate(objetosPosibles[indiceAleatorio], posicionSpawn, Quaternion.identity);
+            Instantiate(enemigosPosibles[i], spawnPointsEnemigos[i].position, Quaternion.identity);
+        }
+
+        ReproducirSonido(sonidoCastigo);
+    }
+
+    private void ReproducirSonido(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip, volumenSonido);
         }
     }
 
@@ -71,4 +101,3 @@ public class Pozo : MonoBehaviour
         }
     }
 }
-
