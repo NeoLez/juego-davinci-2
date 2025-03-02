@@ -91,7 +91,7 @@ public class Chest : MonoBehaviour
         {
             for (int i = 0; i < cantidadMonedas; i++)
             {
-                Vector3 posicionMoneda = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0.3f, 0.7f), 0);
+                Vector3 posicionMoneda = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(0.3f, 0.7f), -0);
                 GameObject coin = Instantiate(monedaPrefab, posicionMoneda, Quaternion.identity);
                 Vector2 impulse = new Vector2(Random.Range(-2f, 2f), Random.Range(1.0f, 4.0f));
 				coin.GetComponent<Movement>().Impulse(impulse * 3);
