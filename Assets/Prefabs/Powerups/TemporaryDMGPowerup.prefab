@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageBoost: 1
   effectDuration: 300
-  newHitSound: {fileID: 8300000, guid: 8f3b80b15972917428e9bb7f04e392f0, type: 3}
+  feedbackObject: {fileID: 2348704958201194356, guid: 2656a9239a74339439cb8cf886350ec9, type: 3}
 --- !u!114 &1991073114145125930
 MonoBehaviour:
   m_ObjectHideFlags: 0
