@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageBoost: 1
-  effectDuration: 300
+  effectDuration: 90
   feedbackObject: {fileID: 2348704958201194356, guid: 2656a9239a74339439cb8cf886350ec9, type: 3}
 --- !u!114 &1991073114145125930
 MonoBehaviour:

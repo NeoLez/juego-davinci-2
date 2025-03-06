@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   percentualIncrease: 0.5
-  effectDuration: 10
+  effectDuration: 90
   feedbackObject: {fileID: 2348704958201194356, guid: 300c266f13516bb49b77c3d4b31b999e, type: 3}
 --- !u!114 &1174705576718559877
 MonoBehaviour:
