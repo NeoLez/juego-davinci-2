@@ -5,59 +5,59 @@ using System.Collections;
 
 public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
-    private AudioSource audioSource;
-    public AudioClip hoverSound; 
-    public AudioClip clickSound; 
-    [Range(0f, 3f)] public float volume = 2f; 
+    private static AudioSource globalAudioSource; // Audio global para evitar cortes
+    public AudioClip hoverSound;
+    public AudioClip clickSound;
+    [Range(0f, 3f)] public float volume = 2f;
 
-    public AudioSource backgroundMusic; // Referencia a la música de fondo
-    public float fadeDuration = 1.5f; // Duración del fade out
+    public GameObject menuOpciones; // Referencia al menú de opciones
+    public GameObject menuCreditos; // Referencia al menú de créditos
+
+    public bool isOptionsButton = false; // Marcar en el Inspector si es el botón de opciones
+    public bool isCreditsButton = false; // Marcar en el Inspector si es el botón de créditos
 
     private void Start()
     {
-        
-        audioSource = GetComponent<AudioSource>();
-
-        
-        if (audioSource == null)
+        if (globalAudioSource == null)
         {
-            audioSource = gameObject.AddComponent<AudioSource>();
+            GameObject audioManager = GameObject.Find("AudioManager");
+            if (audioManager == null)
+            {
+                audioManager = new GameObject("AudioManager");
+                globalAudioSource = audioManager.AddComponent<AudioSource>();
+                DontDestroyOnLoad(audioManager);
+            }
+            else
+            {
+                globalAudioSource = audioManager.GetComponent<AudioSource>();
+            }
         }
-
-        
-        audioSource.enabled = true;
-        audioSource.playOnAwake = false; 
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (hoverSound != null)
-            audioSource.PlayOneShot(hoverSound, volume);
+            globalAudioSource.PlayOneShot(hoverSound, volume);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (clickSound != null)
-            audioSource.PlayOneShot(clickSound, volume);
+            globalAudioSource.PlayOneShot(clickSound, volume);
 
-        // Iniciar la reducción de volumen de la música de fondo
-        if (backgroundMusic != null)
+        if (isOptionsButton && menuOpciones != null)
         {
-            StartCoroutine(FadeOutMusic());
+            StartCoroutine(DelayOpenMenu(menuOpciones));
+        }
+        else if (isCreditsButton && menuCreditos != null)
+        {
+            StartCoroutine(DelayOpenMenu(menuCreditos));
         }
     }
 
-    private IEnumerator FadeOutMusic()
+    private IEnumerator DelayOpenMenu(GameObject menu)
     {
-        float startVolume = backgroundMusic.volume;
-
-        while (backgroundMusic.volume > 0)
-        {
-            backgroundMusic.volume -= startVolume * Time.deltaTime / fadeDuration;
-            yield return null;
-        }
-
-        backgroundMusic.volume = 0; 
-        backgroundMusic.Stop(); 
+        yield return new WaitForSeconds(clickSound.length); // Esperar a que termine el sonido
+        menu.SetActive(true); // Activar el menú después del sonido
     }
 }
