@@ -3591,7 +3591,9 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: 2b0dcdc0e41bde24b8d9ac6b880c59d3, type: 3}
   volume: 2
   menuOpciones: {fileID: 0}
+  menuCreditos: {fileID: 0}
   isOptionsButton: 0
+  isCreditsButton: 0
 --- !u!4 &125797653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1017171604138200137, guid: 2abcbabfc7a19a24ba5860c1c629d7a8, type: 3}
@@ -8824,7 +8826,7 @@ MonoBehaviour:
   - Intentas colocar la llave en la cerradura...
   - "Aunque el oxido de intocables a\xF1os se oponen, finalmente lo logras."
   - Con un satisfactorio click, giras la llave y abres la puerta.
-  dialoguePanel: {fileID: 1370640318}
+  dialoguePanel: {fileID: 297339373}
   dialogueText: {fileID: 2136829687}
   highlightedWords: []
 --- !u!4 &297339379
@@ -17930,7 +17932,9 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: 2b0dcdc0e41bde24b8d9ac6b880c59d3, type: 3}
   volume: 2
   menuOpciones: {fileID: 0}
+  menuCreditos: {fileID: 0}
   isOptionsButton: 0
+  isCreditsButton: 0
 --- !u!4 &385499283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3147451199087531663, guid: 2022cfafb6fcb7847a7faec45cdcaebe, type: 3}
@@ -391929,11 +391933,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -61.61
+      value: -64.62
       objectReference: {fileID: 0}
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.15
+      value: 3.85
       objectReference: {fileID: 0}
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.z
