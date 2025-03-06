@@ -339686,7 +339686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541154167708370894, guid: c1af225f7c59a434db200cc58fd45247, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8125217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2541154167708370894, guid: c1af225f7c59a434db200cc58fd45247, type: 3}
       propertyPath: m_LocalRotation.w
@@ -341706,6 +341706,7 @@ MonoBehaviour:
   audioSource: {fileID: 553366450}
   activateSound: {fileID: 8300000, guid: 984de646f027c1b4aa60a2f26cc412ac, type: 3}
   deactivateSound: {fileID: 8300000, guid: 24aad200f38e4e3409836d8be1f74983, type: 3}
+  minTriggerDistance: 0.2
 --- !u!82 &553366450
 AudioSource:
   m_ObjectHideFlags: 0
@@ -342467,6 +342468,7 @@ MonoBehaviour:
   audioSource: {fileID: 590406047}
   activateSound: {fileID: 8300000, guid: 984de646f027c1b4aa60a2f26cc412ac, type: 3}
   deactivateSound: {fileID: 8300000, guid: 24aad200f38e4e3409836d8be1f74983, type: 3}
+  minTriggerDistance: 0.2
 --- !u!82 &590406047
 AudioSource:
   m_ObjectHideFlags: 0
@@ -345640,9 +345642,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivePlate: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 687902191}
   activateSound: {fileID: 8300000, guid: 984de646f027c1b4aa60a2f26cc412ac, type: 3}
   deactivateSound: {fileID: 8300000, guid: 24aad200f38e4e3409836d8be1f74983, type: 3}
+  minTriggerDistance: 0.2
 --- !u!82 &687902191
 AudioSource:
   m_ObjectHideFlags: 0
@@ -346872,6 +346875,7 @@ MonoBehaviour:
   audioSource: {fileID: 735052572}
   activateSound: {fileID: 8300000, guid: 984de646f027c1b4aa60a2f26cc412ac, type: 3}
   deactivateSound: {fileID: 8300000, guid: 24aad200f38e4e3409836d8be1f74983, type: 3}
+  minTriggerDistance: 0.2
 --- !u!4 &735052569
 Transform:
   m_ObjectHideFlags: 0
@@ -363919,6 +363923,7 @@ MonoBehaviour:
   audioSource: {fileID: 1124136915}
   activateSound: {fileID: 8300000, guid: 984de646f027c1b4aa60a2f26cc412ac, type: 3}
   deactivateSound: {fileID: 8300000, guid: 24aad200f38e4e3409836d8be1f74983, type: 3}
+  minTriggerDistance: 0.2
 --- !u!82 &1124136915
 AudioSource:
   m_ObjectHideFlags: 0
@@ -368681,7 +368686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541154167708370894, guid: c1af225f7c59a434db200cc58fd45247, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8125217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2541154167708370894, guid: c1af225f7c59a434db200cc58fd45247, type: 3}
       propertyPath: m_LocalRotation.w
@@ -383315,6 +383320,7 @@ MonoBehaviour:
   audioSource: {fileID: 1845145992}
   activateSound: {fileID: 8300000, guid: 984de646f027c1b4aa60a2f26cc412ac, type: 3}
   deactivateSound: {fileID: 8300000, guid: 24aad200f38e4e3409836d8be1f74983, type: 3}
+  minTriggerDistance: 0.2
 --- !u!82 &1845145992
 AudioSource:
   m_ObjectHideFlags: 0
@@ -388478,7 +388484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2541154167708370894, guid: c1af225f7c59a434db200cc58fd45247, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8125217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2541154167708370894, guid: c1af225f7c59a434db200cc58fd45247, type: 3}
       propertyPath: m_LocalRotation.w
