@@ -13,7 +13,7 @@ public class DeleteAfterSeconds : MonoBehaviour
     
     void Update()
     {
-        if (startTime - Time.time > seconds)
+        if (Time.time - startTime > seconds)
         {
             Destroy(gameObject);
         }
