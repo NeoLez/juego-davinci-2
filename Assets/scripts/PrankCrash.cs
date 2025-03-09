@@ -1,53 +1,32 @@
 ﻿using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
-using System.Diagnostics; // Para cerrar el proceso
 
 public class PrankCrash : MonoBehaviour
 {
-    [SerializeField] private Dialogue dialogueScript; // Referencia al script de diálogo
-    [SerializeField] private GameObject dialoguePanel; // Panel de diálogo a monitorear
-    [SerializeField] private AudioClip explosionSound; // Sonido de explosión
+    [SerializeField] private Dialogue dialogueScript;
+    [SerializeField] private AudioClip explosionSound;
     private AudioSource audioSource;
 
-    private bool prankTriggered = false;
-    private bool dialogueWasActive = false; // ✅ Nuevo: Detectar si el diálogo se abrió al menos una vez
-
-    private void Start()
-    {
-        audioSource = gameObject.AddComponent<AudioSource>();
+    private void Start() {
+        dialogueScript.OnDialogueEnded += Explotar;
     }
 
-    private void Update()
-    {
-        if (!prankTriggered && dialogueScript != null && dialoguePanel != null)
-        {
-            // ✅ Si el diálogo se abrió al menos una vez, activamos la detección del cierre
-            if (dialoguePanel.activeSelf)
-            {
-                dialogueWasActive = true;
-            }
-
-            // ✅ Solo activamos el prank si el diálogo se cerró después de haber estado abierto
-            if (dialogueWasActive && !dialoguePanel.activeSelf && dialogueScript.didDialogueStart == false)
-            {
-                StartCoroutine(TriggerPrank());
-                prankTriggered = true; // Evita múltiples activaciones
-            }
-        }
+    public void Explotar() {
+        StartCoroutine(TriggerPrank());
     }
-
+    
     private IEnumerator TriggerPrank()
     {
-        yield return new WaitForSeconds(0.5f); // Pequeña pausa antes del sonido
-        audioSource.PlayOneShot(explosionSound, 1.5f); // Sonido fuerte de explosión
+        yield return new WaitForSeconds(0.5f);
+        Manager.Instance.PlaySound(explosionSound, 1.5f);
 
-        yield return new WaitForSeconds(2f); // Espera a que suene la explosión
-
-        // 💥 Cerrar el juego
+        yield return new WaitForSeconds(2f);
+        
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false; // Detiene el juego en el editor
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
-        Process.GetCurrentProcess().Kill(); // Cierra el juego forzadamente
+        Process.GetCurrentProcess().Kill();
 #endif
     }
 }

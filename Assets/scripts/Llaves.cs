@@ -5,16 +5,18 @@ using UnityEngine;
 public class Llaves : MonoBehaviour
 {
     public string nombreLlave = "LlaveCofre"; 
-    public KeyCode teclaParaRecoger = KeyCode.F; 
 
     [Header("Sonido")]
     public AudioClip sonidoRecoger; 
 
     private bool jugadorCerca = false;
 
-    private void Update()
-    {
-        if (jugadorCerca && Input.GetKeyDown(teclaParaRecoger))
+    private void Start() {
+        Manager.Instance.playerInput.OnPressedInteract += Interacted;
+    }
+
+    private void Interacted() {
+        if (jugadorCerca)
         {
             RecogerLlave();
         }
@@ -47,6 +49,7 @@ public class Llaves : MonoBehaviour
             GameManager.Instance.ReproducirSonido(sonidoRecoger);
         }
 
+        Manager.Instance.playerInput.OnPressedInteract -= Interacted;
         Destroy(gameObject); 
     }
 }

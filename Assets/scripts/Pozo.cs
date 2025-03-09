@@ -24,9 +24,12 @@ public class Pozo : MonoBehaviour
     public AudioClip sonidoCastigo;
     [Range(0f, 1f)] public float volumenSonido = 1f; // Ajuste de volumen en el inspector
 
-    void Update()
-    {
-        if (jugadorCerca && Input.GetKeyDown(KeyCode.F))
+    private void Start() {
+        Manager.Instance.playerInput.OnPressedInteract += Interacted;
+    }
+
+    private void Interacted() {
+        if (jugadorCerca)
         {
             IntentarUsarPozo();
         }

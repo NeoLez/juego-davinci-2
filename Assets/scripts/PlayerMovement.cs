@@ -9,7 +9,7 @@ namespace New
 		[SerializeField] private Movement movement;
 
 		private void Update() {
-			movement.MoveNormalized(new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical")));
+			movement.MoveNormalized(Manager.Instance.playerInput.GetMovementDirection());
 		}
 	}
 }
