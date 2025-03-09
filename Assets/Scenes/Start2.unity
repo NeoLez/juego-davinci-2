@@ -367244,8 +367244,8 @@ Transform:
   m_GameObject: {fileID: 676077023}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.1, y: -70.6, z: 0}
-  m_LocalScale: {x: 2.7147, y: 2.7147, z: 2.7147}
+  m_LocalPosition: {x: 41.1, y: -70.76, z: 0}
+  m_LocalScale: {x: 1.9228764, y: 1.9228764, z: 1.9228764}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1820857876}
@@ -446305,7 +446305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2482065509406375385, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_Name
-      value: Open Chest (1)
+      value: ChestNormal
       objectReference: {fileID: 0}
     - target: {fileID: 3681465199072873164, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -446315,14 +446315,6 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.96875
       objectReference: {fileID: 0}
-    - target: {fileID: 4731689647128194307, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
-      propertyPath: sonidoAbierto
-      value: 
-      objectReference: {fileID: 8300000, guid: 27039e98733796d4db5f661318d406f1, type: 3}
-    - target: {fileID: 4731689647128194307, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
-      propertyPath: sonidoCerrado
-      value: 
-      objectReference: {fileID: 8300000, guid: d82eea02956cee549923828940437fcc, type: 3}
     - target: {fileID: 4731689647128194307, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: spriteAbierto
       value: 
@@ -450443,7 +450435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2482065509406375385, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_Name
-      value: Open Chest (2)
+      value: ChestNormal
       objectReference: {fileID: 0}
     - target: {fileID: 3681465199072873164, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -456521,11 +456513,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.09
+      value: 39.4
       objectReference: {fileID: 0}
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.61
+      value: -75.6
       objectReference: {fileID: 0}
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.z
@@ -456827,7 +456819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2482065509406375385, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_Name
-      value: Open Chest
+      value: ChestNormal
       objectReference: {fileID: 0}
     - target: {fileID: 3681465199072873164, guid: 10b0fdfaec3a0584db3d7b25f52a81b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

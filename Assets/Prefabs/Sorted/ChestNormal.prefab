@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1153534963
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -234722223, guid: 766574409e15f4b4692134a7d0eabb72, type: 3}
+  m_Sprite: {fileID: -1800012833, guid: 4d7b6d5842befb046a9bebdb9af5e47c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9, y: 0.9}
+    oldSize: {x: 1, y: 0.96875}
     newSize: {x: 0.9, y: 0.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monedaPrefab: {fileID: 4704370459960310707, guid: 1173a3b5aae242c4bb6f28ef3c82cba6, type: 3}
-  cantidadMonedas: 10
-  spriteCerrado: {fileID: -234722223, guid: 766574409e15f4b4692134a7d0eabb72, type: 3}
-  spriteAbierto: {fileID: -551284852, guid: 766574409e15f4b4692134a7d0eabb72, type: 3}
+  cantidadMonedas: 15
+  spriteCerrado: {fileID: -1800012833, guid: 4d7b6d5842befb046a9bebdb9af5e47c, type: 3}
+  spriteAbierto: {fileID: -667148608, guid: 4d7b6d5842befb046a9bebdb9af5e47c, type: 3}
   teclaParaAbrir: 102
   requiereLlave: 0
   llaveNecesaria: 
@@ -196,7 +196,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9, y: 0.9}
+    oldSize: {x: 1, y: 0.96875}
     newSize: {x: 0.9, y: 0.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -218,3 +218,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 686113565961248517}
+  offset: 0
