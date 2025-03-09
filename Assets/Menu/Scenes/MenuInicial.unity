@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 126034799}
   - component: {fileID: 126034798}
   - component: {fileID: 126034797}
+  - component: {fileID: 126034800}
   m_Layer: 5
   m_Name: Prototipo
   m_TagString: Untagged
@@ -256,6 +257,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126034795}
   m_CullTransparentMesh: 1
+--- !u!114 &126034800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126034795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1b3bb3db492be47b490d90ade03c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: b35e3c7ccca34d14485b24876e546988, type: 3}
+  clickSound: {fileID: 8300000, guid: 2b0dcdc0e41bde24b8d9ac6b880c59d3, type: 3}
+  volume: 2
+  menuOpciones: {fileID: 0}
+  menuCreditos: {fileID: 0}
+  isOptionsButton: 0
+  isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &201945517
 GameObject:
   m_ObjectHideFlags: 0
