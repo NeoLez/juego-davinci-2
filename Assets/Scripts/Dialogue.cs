@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
-[System.Serializable]
+[Serializable]
 public class HighlightedWord
 {
     public string word;  // Palabra a resaltar
@@ -25,6 +26,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
 
     [SerializeField] private HighlightedWord[] highlightedWords;
+
+    public event Action OnDialogueEnded;
 
     private void Awake()
     {
@@ -115,6 +118,8 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
+            OnDialogueEnded?.Invoke();
+            
             didDialogueStart = false;
             dialoguePanel.SetActive(false);
             dialogueMark.SetActive(true);

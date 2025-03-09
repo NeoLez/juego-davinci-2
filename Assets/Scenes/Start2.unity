@@ -367278,7 +367278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueScript: {fileID: 676077027}
-  dialoguePanel: {fileID: 891633605}
   explosionSound: {fileID: 8300000, guid: 0539bff3ac5432541ae1305d8d5d6c8a, type: 3}
 --- !u!82 &676077032
 AudioSource:
@@ -456521,11 +456520,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.09
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.61
+      value: 19.41
       objectReference: {fileID: 0}
     - target: {fileID: 3214766842314211713, guid: 3736d9bab85f8784ea0c18c7467cd626, type: 3}
       propertyPath: m_LocalPosition.z
@@ -457410,7 +457409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8364835443463534806, guid: 462e5f302a31a2d4c8ed248d4f45d700, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -17.999939
+      value: -18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

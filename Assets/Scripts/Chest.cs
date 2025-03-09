@@ -9,8 +9,7 @@ public class Chest : MonoBehaviour
     public int cantidadMonedas = 1;
     public Sprite spriteCerrado, spriteAbierto;
     private SpriteRenderer spriteRenderer;
-
-    public KeyCode teclaParaAbrir = KeyCode.E;
+    
     private bool estaAbierto = false;
     private bool jugadorCerca = false;
 
@@ -22,9 +21,11 @@ public class Chest : MonoBehaviour
     public AudioClip sonidoCerrado; 
     public AudioClip sonidoAbierto;
     public List<AudioClip> coinDropSounds;
-
+    
     void Start()
     {
+        Manager.Instance.playerInput.OnPressedInteract += Interacted;
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null && spriteCerrado != null)
         {
@@ -32,9 +33,8 @@ public class Chest : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (jugadorCerca && Input.GetKeyDown(teclaParaAbrir))
+    public void Interacted() {
+        if (jugadorCerca)
         {
             IntentarAbrirCofre();
         }

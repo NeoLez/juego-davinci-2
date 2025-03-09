@@ -8,8 +8,12 @@ namespace New
 		[SerializeField] private Dialogue _dialogue;
 		private bool isPlayerInRange;
 
-		private void Update() {
-			if (isPlayerInRange && Input.GetKeyDown(KeyCode.F)) { ;
+		private void Start() {
+			Manager.Instance.playerInput.OnPressedInteract += Interacted;
+		}
+
+		public void Interacted() {
+			if (isPlayerInRange) { ;
 				_dialogue.Interact();
 			}
 		}

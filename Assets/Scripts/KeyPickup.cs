@@ -11,8 +11,12 @@ namespace New
 		[SerializeField] private AudioClip audioClip;
 		[SerializeField] private float volume;
 
-		private void Update() {
-			if (canInteract && Input.GetKey(KeyCode.F)) {
+		private void Start() {
+			Manager.Instance.playerInput.OnPressedInteract += Interacted;
+		}
+
+		private void Interacted() {
+			if (canInteract) {
 				switch (keyNumber) {
 					case 1: Manager.Instance.foundKeyOne = true; break;
 					case 2: Manager.Instance.foundKeyTwo = true; break;
@@ -20,6 +24,7 @@ namespace New
 				}
 				
 				Manager.Instance.PlaySound(audioClip, volume);
+				Manager.Instance.playerInput.OnPressedInteract -= Interacted;
 				Destroy(gameObject);
 			}
 		}

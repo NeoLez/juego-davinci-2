@@ -19,10 +19,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start() {
         attackTimer = new Timer(Timer.UpdateType.UPDATE);
+        Manager.Instance.playerInput.OnPressedAttack += Attack;
     }
 
-    void Update() {
-        if(Input.GetKeyDown(KeyCode.Space) && !attackTimer.IsWaiting()) {
+    public void Attack() {
+        if(!attackTimer.IsWaiting()) {
             attackTimer.Wait(attackCooldown);
             OnPlayerAttack?.Invoke();
             

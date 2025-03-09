@@ -9,8 +9,10 @@ public class Manager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     public Material RegularSpriteMaterial;
     public Material TransparencySpriteMaterial;
+    public PlayerInput playerInput;
     private void Awake() {
         Instance = this;
+        playerInput = new PlayerInput();
     }
 
     public void PlaySound(AudioClip clip, float vol = 1) {
