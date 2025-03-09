@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7762595729796357783}
   - component: {fileID: 5890018895822755176}
   - component: {fileID: 8438589321972520691}
+  - component: {fileID: 4940919309229095031}
   m_Layer: 0
   m_Name: Berries2
   m_TagString: Untagged
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1153534963
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -140403540, guid: ed7906bcc1645464eaed0e71971fce6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -143,3 +144,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f33cd3c81d19bc4fb2343a4381db5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4940919309229095031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016824112144348720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40c90d2203a60946a92617dd6fa8f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7762595729796357783}
+  offset: 1

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace New
@@ -14,8 +15,12 @@ namespace New
 		private bool isDoorOpen;
 		private bool lockState;
 		private bool playedSound;
-		
-		private void Update() {
+
+		private void Start() {
+			Manager.Instance.playerInput.OnPressedInteract += Interacted;
+		}
+
+		public void Interacted() {
 			if (!lockState) {
 				if (Manager.Instance.foundKeyOne && Manager.Instance.foundKeyTwo && Manager.Instance.foundKeyThree) {
 					isDoorOpen = true;
@@ -25,7 +30,7 @@ namespace New
 				}
 			}
 
-			if (isPlayerInRange && Input.GetKeyDown(KeyCode.F)) {
+			if (isPlayerInRange) {
 				lockState = true;
 				if (isDoorOpen) {
 					if (!playedSound) {
