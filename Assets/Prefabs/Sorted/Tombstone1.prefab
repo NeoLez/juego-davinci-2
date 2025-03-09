@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 2154303123569019897}
   - component: {fileID: 8480808306019584828}
   - component: {fileID: 405519187019993311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tombstone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6086656214198687200}
+  offset: 0
 --- !u!114 &2154303123569019897
 MonoBehaviour:
   m_ObjectHideFlags: 0

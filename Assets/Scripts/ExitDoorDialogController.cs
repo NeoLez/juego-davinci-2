@@ -17,7 +17,7 @@ namespace New
 		
 		private void Update() {
 			if (!lockState) {
-				if (Manager.Instance.foundKeyOne && Manager.Instance.foundKeyTwo) {
+				if (Manager.Instance.foundKeyOne && Manager.Instance.foundKeyTwo && Manager.Instance.foundKeyThree) {
 					isDoorOpen = true;
 				}
 				else {

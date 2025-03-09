@@ -2860,6 +2860,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Door
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 359
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40210e320af7b24419190270a7b64290
+      internalID: 32173803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2882,6 +2903,7 @@ TextureImporter:
       ChestOpen: -667148608
       CrateBig: 1222263704
       CrateSmall: 1436557940
+      Door: 32173803
       MonolithBroken: -2146680361
       MonolithMedium: 668907809
       MonolithTall: -2127454676

@@ -16,6 +16,7 @@ namespace New
 				switch (keyNumber) {
 					case 1: Manager.Instance.foundKeyOne = true; break;
 					case 2: Manager.Instance.foundKeyTwo = true; break;
+					case 3: Manager.Instance.foundKeyThree = true; break;
 				}
 				
 				Manager.Instance.PlaySound(audioClip, volume);

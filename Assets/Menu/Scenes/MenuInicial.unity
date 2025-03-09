@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &126034796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -832,6 +832,7 @@ MonoBehaviour:
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!82 &527347921
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1218,6 +1219,7 @@ MonoBehaviour:
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!82 &952514262
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2401,6 +2403,7 @@ MonoBehaviour:
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1673584156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,6 +2921,7 @@ MonoBehaviour:
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!82 &2039876012
 AudioSource:
   m_ObjectHideFlags: 0

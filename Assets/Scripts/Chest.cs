@@ -62,10 +62,10 @@ public class Chest : MonoBehaviour
 
         if (requiereLlave && !GameManager.Instance.TieneLlave(llaveNecesaria))
         {
-            GameManager.Instance.ReproducirSonido(sonidoCerrado);
+            Manager.Instance.PlaySound(sonidoCerrado);
             return;
         }
-
+        Manager.Instance.PlaySound(sonidoAbierto);
         StartCoroutine(AbrirCofre());
     }
 

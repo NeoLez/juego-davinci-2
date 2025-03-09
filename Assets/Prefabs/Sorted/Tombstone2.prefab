@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4879567195278838788}
   - component: {fileID: 6247597513523526534}
   - component: {fileID: 5733977655594656284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tombstone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3827966437622119047}
+  offset: 0
 --- !u!114 &4879567195278838788
 MonoBehaviour:
   m_ObjectHideFlags: 0
