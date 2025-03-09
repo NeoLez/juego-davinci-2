@@ -6,6 +6,7 @@ using UnityEngine;
 public class Berries : MonoBehaviour
 {
     private bool isPlayerInRange;
+    [SerializeField] private AudioClip eatSound;
     
     private void Start() {
         Manager.Instance.playerInput.OnPressedInteract += Interacted;
@@ -15,6 +16,7 @@ public class Berries : MonoBehaviour
         if (isPlayerInRange) {
             Manager.Instance.player.GetComponent<Health>().Heal(1);
             Manager.Instance.playerInput.OnPressedInteract -= Interacted;
+            Manager.Instance.PlaySound(eatSound);
             Destroy(gameObject);
         }
     }
