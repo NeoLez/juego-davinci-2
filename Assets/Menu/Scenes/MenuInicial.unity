@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 8300000, guid: b35e3c7ccca34d14485b24876e546988, type: 3}
-  clickSound: {fileID: 8300000, guid: 2b0dcdc0e41bde24b8d9ac6b880c59d3, type: 3}
+  clickSound: {fileID: 8300000, guid: 349de217f40ec9249a499e4892d81ee1, type: 3}
   volume: 2
   menuOpciones: {fileID: 0}
   menuCreditos: {fileID: 0}
@@ -3040,7 +3040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6180081786257284294, guid: e04944483a0314143ad227f99b944a54, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7518541332692562402, guid: e04944483a0314143ad227f99b944a54, type: 3}
       propertyPath: m_LocalPosition.x

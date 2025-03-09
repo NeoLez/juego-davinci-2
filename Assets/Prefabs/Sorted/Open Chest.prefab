@@ -152,9 +152,9 @@ MonoBehaviour:
   spriteAbierto: {fileID: -551284852, guid: 766574409e15f4b4692134a7d0eabb72, type: 3}
   teclaParaAbrir: 102
   requiereLlave: 0
-  llaveNecesaria: LlaveCofre
-  sonidoCerrado: {fileID: 0}
-  sonidoAbierto: {fileID: 8300000, guid: 2fa78a6f5a8f03a4fb228875ee476ebf, type: 3}
+  llaveNecesaria: {fileID: 0}
+  sonidoCerrado: {fileID: 8300000, guid: d82eea02956cee549923828940437fcc, type: 3}
+  sonidoAbierto: {fileID: 8300000, guid: 27039e98733796d4db5f661318d406f1, type: 3}
   coinDropSounds:
   - {fileID: 8300000, guid: e4d97a88d1cfd6f4c9814077c2f5c4a9, type: 3}
   - {fileID: 8300000, guid: 4886ddf8f04ff8e4b8de8d619ec9419f, type: 3}

@@ -99,9 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616b3e2084aad6e48961c40fdf027de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreLlave: LlaveCofre
   teclaParaRecoger: 102
-  sonidoRecoger: {fileID: 0}
+  sonidoRecoger: {fileID: 8300000, guid: d76f638d185fba8428c53a632531be91, type: 3}
 --- !u!61 &8456271648391210945
 BoxCollider2D:
   m_ObjectHideFlags: 0

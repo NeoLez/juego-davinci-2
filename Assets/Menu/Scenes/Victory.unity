@@ -578,8 +578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 783, y: -428}
-  m_SizeDelta: {x: 338.442, y: 128.896}
+  m_AnchoredPosition: {x: 727, y: -428}
+  m_SizeDelta: {x: 410, y: 120}
   m_Pivot: {x: 0.5, y: 0.3718381}
 --- !u!114 &527347917
 MonoBehaviour:
@@ -700,12 +700,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 8300000, guid: b35e3c7ccca34d14485b24876e546988, type: 3}
-  clickSound: {fileID: 8300000, guid: 2b0dcdc0e41bde24b8d9ac6b880c59d3, type: 3}
+  clickSound: {fileID: 8300000, guid: 349de217f40ec9249a499e4892d81ee1, type: 3}
   volume: 2
   menuOpciones: {fileID: 0}
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &767031017
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,8 +768,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 27b816e4d30545e4b8ea91f7e71cd7a9, type: 2}
+  m_sharedMaterial: {fileID: -4134927481767689263, guid: 27b816e4d30545e4b8ea91f7e71cd7a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -876,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -304, y: -742}
+  m_AnchoredPosition: {x: -390, y: -566}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &859913246
@@ -901,10 +902,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: '
 
-    100% no fake'
+    100% real no fake'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 749b9069dc4742c5bfa5c74644049926, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1131,6 +1132,7 @@ MonoBehaviour:
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1058847168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1311,7 @@ MonoBehaviour:
     Leonardo Gonzalez Chiavassa'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1443,7 +1445,7 @@ MonoBehaviour:
   m_text: Enzo Francisco Melidoni
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: f2dcf029949142e28b974630369c8b4e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2066,6 +2068,7 @@ MonoBehaviour:
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1673584156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,6 +2695,7 @@ MonoBehaviour:
   menuCreditos: {fileID: 0}
   isOptionsButton: 0
   isCreditsButton: 0
+  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
