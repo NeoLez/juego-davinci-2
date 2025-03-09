@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c71e5528f5440fa845df63b9c54812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentage: -0.5
+  percentage: -0.2
   effectDuration: 90
   feedbackObject: {fileID: 2348704958201194356, guid: 577b501eb9fa530428b74176deb2b1be, type: 3}
 --- !u!114 &3929170888526319153
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2243108264047143909}
+  offset: 0

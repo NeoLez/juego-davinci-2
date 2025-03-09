@@ -146,7 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2213c0e62c04e224a9c8713679821bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  costoMonedas: 10
+  costoMonedas: 15
+  maxIntentosFallidos: 3
+  enemigosPosibles: []
+  spawnPointsEnemigos: []
   objetosPosibles:
   - {fileID: 0}
   - {fileID: 7002527490837212662, guid: efe2290789d0d464eb166655f34eea84, type: 3}
@@ -156,6 +159,8 @@ MonoBehaviour:
   audioSource: {fileID: 8465591547370869572}
   sonidoError: {fileID: 8300000, guid: d82eea02956cee549923828940437fcc, type: 3}
   sonidoExito: {fileID: 8300000, guid: 4c28022b003c87a4f93b32dc4f4e02cb, type: 3}
+  sonidoCastigo: {fileID: 0}
+  volumenSonido: 1
 --- !u!82 &8465591547370869572
 AudioSource:
   m_ObjectHideFlags: 0
@@ -300,3 +305,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5873826507135827539}
+  offset: 0
