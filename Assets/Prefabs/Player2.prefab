@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9033d40d6dc34e2db2bceedd838e4836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: -10}
+  offset: {x: 0, y: 0, z: -4}
   snappiness: 2
   lookAheadIntensityStill: 1
   lookAheadIntensityMove: 4
